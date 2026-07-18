@@ -19,6 +19,7 @@ import {
   OverviewSectionCard,
   OverviewStatCard,
 } from "@/components/mna/dashboard/overview-ui";
+import { AiDataFeedCard } from "@/components/mna/dashboard/ai-data-feed-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -118,6 +119,8 @@ export function DashboardClient() {
           </p>
         </div>
       </header>
+
+      <AiDataFeedCard />
 
       <div className="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
         <OverviewStatCard

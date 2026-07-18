@@ -22,6 +22,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { formatNumber } from "@/lib/utils";
+import { recordSyncContribution } from "@/lib/depin/contribution-store";
 
 function StatCell({
   label,
@@ -129,10 +130,15 @@ export function PerformanceMonitor() {
         setNotice(data.error ?? t("monitor.syncFailed"));
         return false;
       }
+      const views =
+        (data.metrics?.tiktok?.views ?? row.tiktok?.views ?? 0) +
+        (data.metrics?.instagram?.views ?? row.instagram?.views ?? 0);
+      const contribution = recordSyncContribution({ views });
       setNotice(
-        t("monitor.synced", {
+        t("monitor.syncedWithFeed", {
           title: row.title,
           when: data.lastSyncedLabel ?? t("monitor.updated"),
+          points: contribution.lastDelta,
         }),
       );
       return true;

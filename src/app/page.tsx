@@ -5,12 +5,13 @@ import { Features } from "@/components/marketing/features";
 import { GetStarted } from "@/components/marketing/get-started";
 import { Hero } from "@/components/marketing/hero";
 import { LogoMarquee } from "@/components/marketing/marquee";
-import { Mission } from "@/components/marketing/mission";
 import { Pillars } from "@/components/marketing/pillars";
 import { Pricing } from "@/components/marketing/pricing";
+import { Problem } from "@/components/marketing/problem";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { Testimonials } from "@/components/marketing/testimonials";
+import { Web3Horizon } from "@/components/marketing/web3-horizon";
 import { Welcome } from "@/components/marketing/welcome";
 
 export default function HomePage() {
@@ -20,10 +21,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <LogoMarquee />
-        <Mission />
+        <Problem />
         <Welcome />
         <Pillars />
         <Features />
+        <Web3Horizon />
         <Audiences />
         <Testimonials />
         <Pricing />

@@ -32,7 +32,7 @@ const PILLARS: {
     titleKey: "pillars.workspace.title",
     copyKey: "pillars.workspace.copy",
     altKey: "pillars.workspace.alt",
-    href: "#audiences",
+    href: "#services",
     image: "/marketing/pillar-planner.jpg",
   },
 ];

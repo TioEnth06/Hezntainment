@@ -1,52 +1,30 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  BarChart3,
-  CalendarDays,
-  Link2,
-  Radio,
-  RefreshCw,
-  Users,
-} from "lucide-react";
+import { BarChart3, Radio, Workflow } from "lucide-react";
 import { Eyebrow, Section, SectionTitle } from "@/components/marketing/section";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
 import { fadeUp, springSoft, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const services: {
-  icon: typeof CalendarDays;
+  icon: typeof Radio;
   titleKey: TranslationKey;
   bodyKey: TranslationKey;
 }[] = [
-  {
-    icon: CalendarDays,
-    titleKey: "features.kalender.title",
-    bodyKey: "features.kalender.body",
-  },
   {
     icon: Radio,
     titleKey: "features.monitor.title",
     bodyKey: "features.monitor.body",
   },
   {
-    icon: RefreshCw,
-    titleKey: "features.sync.title",
-    bodyKey: "features.sync.body",
+    icon: Workflow,
+    titleKey: "features.pipeline.title",
+    bodyKey: "features.pipeline.body",
   },
   {
     icon: BarChart3,
-    titleKey: "features.kpi.title",
-    bodyKey: "features.kpi.body",
-  },
-  {
-    icon: Users,
-    titleKey: "features.team.title",
-    bodyKey: "features.team.body",
-  },
-  {
-    icon: Link2,
-    titleKey: "features.links.title",
-    bodyKey: "features.links.body",
+    titleKey: "features.reporter.title",
+    bodyKey: "features.reporter.body",
   },
 ];
 
@@ -59,7 +37,7 @@ export function Features() {
       <Eyebrow>{t("features.eyebrow")}</Eyebrow>
       <SectionTitle>{t("features.title")}</SectionTitle>
       <motion.div
-        className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-14 grid gap-x-8 gap-y-12 md:grid-cols-3"
         variants={reduce ? undefined : staggerContainer}
         initial={reduce ? false : "hidden"}
         whileInView={reduce ? undefined : "show"}

@@ -59,7 +59,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.34, ease: easeOutExpo }}
-          className="mt-5 max-w-3xl text-xl font-semibold leading-snug text-white/90 sm:text-2xl md:text-[2rem] md:leading-tight"
+          className="mt-5 max-w-4xl text-lg font-semibold leading-snug text-white/90 sm:text-xl md:text-[1.65rem] md:leading-tight"
         >
           {t("hero.headline")}
           <motion.span
@@ -75,7 +75,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.5, ease: easeOutExpo }}
-          className="mt-5 max-w-xl text-base text-white/65 md:text-lg"
+          className="mt-5 max-w-2xl text-base text-white/65 md:text-lg"
         >
           {t("hero.body")}
         </motion.p>
@@ -94,18 +94,18 @@ export function Hero() {
             </Link>
           </motion.div>
           <motion.div whileHover={reduce ? undefined : { scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Link
-              href="/login"
+            <a
+              href="#web3-horizon"
               className="inline-flex rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition hover:border-primary hover:bg-primary/20"
             >
               {t("hero.ctaSecondary")}
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </motion.div>
 
       <motion.a
-        href="#mission"
+        href="#problem"
         initial={reduce ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.5 }}

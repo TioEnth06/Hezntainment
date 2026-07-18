@@ -18,8 +18,14 @@ export function SiteFooter() {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/40">
               {t("footer.product")}
             </p>
+            <a href="#problem" className="block hover:text-warm">
+              {t("nav.problem")}
+            </a>
             <a href="#services" className="block hover:text-warm">
               {t("footer.modules")}
+            </a>
+            <a href="#web3-horizon" className="block hover:text-warm">
+              {t("nav.web3")}
             </a>
             <a href="#pricing" className="block hover:text-warm">
               {t("footer.pricing")}

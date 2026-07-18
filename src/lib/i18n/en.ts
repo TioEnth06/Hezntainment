@@ -1,99 +1,97 @@
 /** English copy */
 export const en = {
-  "nav.mission": "Mission",
-  "nav.modules": "Modules",
+  "nav.problem": "The Problem",
+  "nav.modules": "Features",
+  "nav.web3": "Web3 Horizon",
   "nav.audiences": "Who We Serve",
   "nav.pricing": "Pricing",
   "nav.faq": "FAQ",
   "nav.login": "Log in",
-  "nav.cta": "Get Started — it's Free",
+  "nav.cta": "Start Free Trial",
 
-  "hero.eyebrow": "Introducing",
+  "hero.eyebrow": "ContentOps for agencies & builders",
   "hero.title": "Hezntainment",
-  "hero.headline": "The leading multi-brand content ops workspace for agencies.",
-  "hero.accent": "Select boldly, sync fast, track truth.",
+  "hero.headline":
+    "Stop Wasteful Content Operations. Automate Insights, Manage Creative Teams, and Own Your Social Data.",
+  "hero.accent": "X · Instagram · TikTok",
   "hero.body":
-    "Switch brand (NHM Online → Siinbooth), SYNC TikTok/Instagram metrics, and print Laporan KPI for Admin, Sosmed, and Editor — in one shell.",
-  "hero.ctaPrimary": "Get Started — it's Free",
-  "hero.ctaSecondary": "Book a demo login",
+    "All-in-one ContentOps built for Social Media Agencies and Web3 Project Builders. Instantly sync performance data from X, Instagram, and TikTok, run team workflows, and prepare your data assets for the decentralized economy.",
+  "hero.ctaPrimary": "Start Free Trial (Web2 Core)",
+  "hero.ctaSecondary": "Explore Web3 Roadmap",
   "hero.scroll": "Scroll down & discover",
 
-  "marquee.label": "Powering multi-brand content desks",
+  "marquee.label": "Powering multi-brand ContentOps desks",
 
-  "mission.eyebrow": "Our Mission",
-  "mission.line1":
-    "Agency content shouldn't live in five native apps and a spreadsheet.",
-  "mission.line2": "We centralize planning, sync, and team KPI — per brand.",
-  "mission.body":
-    "Hezntainment is built for social agencies and content teams that run multiple brands. Switch workspace, filter Monitor Data & KPI reports instantly, and keep Admin tooling away from day-to-day staff views.",
+  "problem.eyebrow": "Industry Friction",
+  "problem.title": "Three challenges holding ContentOps back.",
+  "problem.manual.title": "The Manual Grind",
+  "problem.manual.body":
+    "Sosmed teams burn precious hours opening X, Instagram, and TikTok one by one — copying insight metrics into Excel sheets.",
+  "problem.friction.title": "Operational Friction",
+  "problem.friction.body":
+    "Admin, Sosmed, and Editor coordination splits across WhatsApp, Trello, and Google Drive. Collaboration frays, assets go missing, and KPI reviews turn biased.",
+  "problem.data.title": "Exploited Data Value",
+  "problem.data.body":
+    "Public content performance data is worth billions for AI training and global ad analytics — yet it evaporates into Web2 giants with zero return for the agencies and creators who produce it.",
 
   "welcome.eyebrow": "Product",
   "welcome.title": "Welcome to",
   "welcome.p1":
-    "An all-in-one social management hub: editorial calendar, Monitor Data, link tracking, and role-based team administration.",
+    "An all-in-one ContentOps hub: Monitor Data for X / Instagram / TikTok, RBAC production pipelines, and one-click KPI reporting.",
   "welcome.p2Strong": "Multi-tenant workspaces",
   "welcome.p2":
     " keep every brand isolated — switch from NHM Online to Siinbooth and every metric view remounts cleanly.",
   "welcome.p3":
-    "Start with the core you need every day — RBAC, sync queue, and KPI reports — then grow seats, brands, and integrations as the team scales.",
-  "welcome.caption": "Monitor Data · Laporan KPI · Workspace switcher",
+    "Start with Web2 Core — SYNC, RBAC, and KPI — then grow into the Web3 Data Horizon as your desk is ready.",
+  "welcome.caption": "X · Instagram · TikTok · Laporan KPI · AI Data Feed",
 
-  "features.eyebrow": "Core modules",
-  "features.title": "Menus agencies use every day — already in one shell.",
-  "features.included": "Included",
-  "features.kalender.title": "Editorial Calendar",
-  "features.kalender.body":
-    "Content timeline per workspace — Ideation to Published, filtered by active brand.",
-  "features.monitor.title": "Monitor Data",
+  "features.eyebrow": "Phase 1 · Core Features",
+  "features.title": "Three pillars of MNA Content — focused on X, Instagram, and TikTok.",
+  "features.included": "Included in Web2 Core",
+  "features.monitor.title": "Unified Social Monitor (X, Instagram, TikTok)",
   "features.monitor.body":
-    "Summary cards + TikTok & Instagram metrics table. Last synced timestamp on every row.",
-  "features.sync.title": "SYNC Engine",
-  "features.sync.body":
-    "SYNC per URL or SYNC ALL. Backend queue avoids rate-limits when many links fire.",
-  "features.kpi.title": "KPI Report",
-  "features.kpi.body":
-    "Sosmed: Create Scripts (DRAFT/PROSES/DONE). Editor: Finish Videos + workload indicator.",
-  "features.team.title": "Team Management (RBAC)",
-  "features.team.body":
-    "Admin, Sosmed, Editor. Bulk invite for large seats — staff never see billing.",
-  "features.links.title": "Link Click Tracker",
-  "features.links.body":
-    "Track outbound / bio links per brand workspace — ready to expand as your sync stack grows.",
+    "Paste a published link from X, Instagram, or TikTok. Our scraper pulls public metrics (Views, Likes, Comments, Retweets, Shares) into one unified dashboard.",
+  "features.pipeline.title": "Role-Based Content Planner & Production Pipeline",
+  "features.pipeline.body":
+    "Clean handoffs upstream to downstream. Separate Admin, Sosmed, and Editor workspaces via RBAC. Run Brainstorming, scripting, and video editing queues without overlap.",
+  "features.reporter.title": "One-Click KPI & Conversion Reporter",
+  "features.reporter.body":
+    "Turn raw metrics into decisions. Auto-calculate engagement objectively and export monthly team reports to PDF/Excel in one click — with Link Click Tracker conversion trails.",
 
   "audiences.eyebrow": "Who We Serve",
   "audiences.title":
-    "Built for production desks that run more than one brand.",
+    "Built for Social Media Agencies and Web3 Project Builders.",
   "audiences.agency.title": "Social Media Agencies",
   "audiences.agency.body":
-    "Run many client brands (NHM Online, Siinbooth, …) without mixing Monitor & KPI data.",
-  "audiences.brands.title": "In-house brand teams",
+    "Run many client brands (NHM Online, Siinbooth, …) without mixing Monitor & KPI data across X, Instagram, and TikTok.",
+  "audiences.brands.title": "Web3 Project Builders",
   "audiences.brands.body":
-    "Run several owned brands in one place — separate metrics, calendars, and KPI views without spreadsheet chaos.",
+    "Ship ContentOps today on Web2 Core, then plug into multichain payouts, DID auth, and AI DePIN feed contribution when you are ready.",
   "audiences.sosmed.title": "Sosmed Specialists",
   "audiences.sosmed.body":
-    "SYNC published URLs, watch views/likes, and hit Create Scripts targets each month.",
+    "SYNC published URLs from X, Instagram, and TikTok — watch views/likes and hit Create Scripts targets each month.",
   "audiences.editors.title": "Editors & Admins",
   "audiences.editors.body":
     "Editors own Finish Videos + workload. Admins own seats, brand inventory, and PRINT REPORT.",
 
   "pricing.eyebrow": "Pricing",
   "pricing.title": "Simple pricing. Scale seats & brands, not spreadsheets.",
-  "pricing.cta": "Get Started — it's Free",
+  "pricing.cta": "Start Free Trial",
   "pricing.note": "*Fair-use limits apply during beta.",
   "pricing.perMonth": "/mo",
   "pricing.creator.blurb": "Solo / small pod — one brand workspace.",
   "pricing.creator.f1": "1 workspace",
   "pricing.creator.f2": "Up to 5 seats",
   "pricing.creator.f3": "Calendar + Monitor Data",
-  "pricing.creator.f4": "SYNC queue (TikTok / IG / YT)",
+  "pricing.creator.f4": "SYNC queue (X / Instagram / TikTok)",
   "pricing.creator.f5": "KPI report CSV",
-  "pricing.agency.blurb": "Multi-brand agencies & growing content desks.",
+  "pricing.agency.blurb": "Multi-brand agencies & Web3 content desks.",
   "pricing.agency.f1": "Unlimited workspaces*",
   "pricing.agency.f2": "Up to 25 seats + bulk invite",
   "pricing.agency.f3": "RBAC: Admin / Sosmed / Editor",
   "pricing.agency.f4": "Monitor Data + PRINT KPI report",
   "pricing.agency.f5": "Priority SYNC queue",
-  "pricing.agency.f6": "API & webhook integrations (roadmap)",
+  "pricing.agency.f6": "Web3 Data Horizon roadmap access",
 
   "faq.eyebrow": "FAQ",
   "faq.title": "Straight answers before your trial.",
@@ -102,38 +100,38 @@ export const en = {
     "Each brand (e.g. NHM Online, Siinbooth) is a separate workspace. Switch brand in the sidebar and Monitor Data + KPI Report reload only the active workspace.",
   "faq.q2": "Which platforms SYNC into Monitor Data?",
   "faq.a2":
-    "Public TikTok, Instagram, and YouTube metrics. Per-row SYNC or SYNC ALL enters a queue to avoid rate-limits.",
+    "Public metrics from X, Instagram, and TikTok. Per-row SYNC or SYNC ALL enters a queue to avoid rate-limits.",
   "faq.q3": "How are Sosmed vs Editor KPIs counted?",
   "faq.a3":
     "Sosmed targets Create Scripts (DRAFT / PROSES / DONE). Editor targets Finish Videos — counted when status becomes READY_TO_REVIEW or PUBLISHED in the current month.",
   "faq.q4": "Can Editors see billing or Team Management?",
   "faq.a4":
     "No. Administration (Team, Brand Inventory) is Admin-only. Editors focus on Dashboard/Calendar; Sosmed can open Monitor Data + KPI Report.",
-  "faq.q5": "Can we connect our own tools later?",
+  "faq.q5": "Is the product locked to one blockchain?",
   "faq.a5":
-    "Yes. The product is built around daily Monitor & KPI workflows first. API and webhook integrations are on the roadmap so you can plug in reporting or automation without changing how the team works today.",
+    "No. Web2 Core ships today. The Web3 Data Horizon is multichain by design — EVM, SVM, Move, and L2s — with DID auth, cross-chain payouts, and AI DePIN feed contribution on the roadmap.",
 
   "cta.eyebrow": "Let's Get Started",
-  "cta.title": "Ready to run Monitor Data & KPI in one shell?",
+  "cta.title": "Ready to run ContentOps without the grind?",
   "cta.body":
-    "Create an Admin trial, invite Sosmed/Editor, switch brand workspace, then SYNC your first published content.",
+    "Start Free Trial on Web2 Core, invite Sosmed/Editor, SYNC your first X / Instagram / TikTok post — and watch AI Data Feed points climb.",
   "cta.bullet1": "Multi-brand workspaces · RBAC Admin / Sosmed / Editor",
-  "cta.bullet2": "Built for Admin, Sosmed & Editor roles",
-  "cta.bullet3": "Demo: admin@hezntainment.com / password123",
+  "cta.bullet2": "Unified Monitor for X, Instagram, TikTok",
+  "cta.bullet3": "AI Data Feed contribution toward Phase 3 DePIN",
   "cta.cardTitle": "Open Hezntainment",
   "cta.cardBody":
     "After login you land in the content ops dashboard — ready to switch brands, SYNC posts, and review KPI.",
   "cta.login": "Log in to demo",
 
   "footer.tagline":
-    "Content ops, Monitor Data, and KPI reports for multi-brand agencies.",
+    "ContentOps for agencies & Web3 builders — X, Instagram, TikTok, and a path to DePIN.",
   "footer.product": "Product",
   "footer.connect": "Connect",
-  "footer.modules": "Modules",
+  "footer.modules": "Features",
   "footer.pricing": "Pricing",
   "footer.demo": "Open demo",
   "footer.trial": "Start Free Trial",
-  "footer.phase2": "API & integrations — coming soon",
+  "footer.phase2": "Web3 Data Horizon — multichain roadmap",
   "footer.rights": "All rights reserved.",
 
   "lang.en": "EN",
@@ -200,7 +198,8 @@ export const en = {
 
   "testimonials.eyebrow": "What Teams Are Saying",
   "testimonials.title": "From the production floor, not a pitch slide.",
-  "testimonials.q1": "SYNC ALL in Monitor Data replaces opening TikTok/IG one by one. Client reviews become opening the KPI Report — not late-night screenshots.",
+  "testimonials.q1":
+    "SYNC ALL in Monitor Data replaces opening X / Instagram / TikTok one by one. Client reviews become opening the KPI Report — not late-night screenshots.",
   "testimonials.q1.role": "Sosmed Lead, multi-brand agency",
   "testimonials.q2": "Switch workspace NHM Online to Siinbooth and every metrics table remounts clean. That is what we need for a 20+ seat team.",
   "testimonials.q2.role": "Agency Admin",
@@ -208,15 +207,40 @@ export const en = {
   "testimonials.q3.role": "Video Editor",
 
   "pillars.explore": "Explore",
-  "pillars.monitor.title": "Monitor Data",
-  "pillars.monitor.copy": "Views, likes, comments, shares per brand — SYNC one post or SYNC ALL via the scrape queue.",
-  "pillars.monitor.alt": "Performance metrics dashboard for published social content",
-  "pillars.kpi.title": "KPI Report",
-  "pillars.kpi.copy": "Monthly Sosmed & Editor productivity with progress bars, status badges, and PRINT REPORT.",
-  "pillars.kpi.alt": "Team KPI report with progress tracking",
-  "pillars.workspace.title": "Multi-Brand Workspaces",
-  "pillars.workspace.copy": "Switch NHM Online ↔ Siinbooth instantly. Admin seats stay separate from staff daily work.",
-  "pillars.workspace.alt": "Creative production planning for multiple brand clients",
+  "pillars.monitor.title": "Unified Social Monitor",
+  "pillars.monitor.copy":
+    "Paste published links from X, Instagram, or TikTok — pull Views, Likes, Comments, Retweets, and Shares into one dashboard.",
+  "pillars.monitor.alt": "Unified social monitor for X, Instagram, and TikTok",
+  "pillars.kpi.title": "KPI & Conversion Reporter",
+  "pillars.kpi.copy":
+    "Objective engagement math plus one-click PDF/Excel exports — with Link Click Tracker conversion trails.",
+  "pillars.kpi.alt": "Team KPI and conversion reporting",
+  "pillars.workspace.title": "RBAC Production Pipeline",
+  "pillars.workspace.copy":
+    "Separate Admin, Sosmed, and Editor rooms. Brainstorming → scripting → editing queue without overlap.",
+  "pillars.workspace.alt": "Role-based content production pipeline",
+
+  "web3.eyebrow": "The Web3 Data Horizon",
+  "web3.title": "Built for Web2 Scale, Engineered for the Web3 Economy.",
+  "web3.body":
+    "Performance data is a valuable digital asset. ContentOps Engine ships with a hybrid architecture ready for a general Web3 transition. In Phase 2, the platform goes multichain to unlock new economic rails:",
+  "web3.auth.title": "Universal Web3 Authentication",
+  "web3.auth.body":
+    "Connect team accounts with decentralized identity (DID) and hybrid wallets — regardless of which blockchain network you use.",
+  "web3.payouts.title": "Cross-Chain Automated Payouts",
+  "web3.payouts.body":
+    "Universal smart-contract rails so agencies and Web3 projects (EVM, SVM, or Move) can settle monthly stablecoin bonuses to team wallets from validated KPI reports.",
+  "web3.hash.title": "Immutable IP Content Hashing",
+  "web3.hash.body":
+    "Register hashes of final video assets on a blockchain ledger before public upload — permanent Proof of Origin that cannot be rewritten.",
+  "web3.feed.title": "Future AI DePIN Feed Contribution",
+  "web3.feed.body":
+    "Accumulate analytics contribution points from daily SYNC activity — preparing your agency for revenue-share rewards as a provider of global AI training datasets.",
+  "web3.feed.badge": "AI Data Feed Points",
+  "web3.feed.live": "Live from your Web2 Core ledger",
+  "web3.feed.hint":
+    "Aligned with the Dashboard contribution meter. SYNC content today — bank points for Phase 3 DePIN.",
+  "web3.cta": "Start Free Trial on Web2 Core",
 
   "boot.step1": "Initializing Hezntainment Engine…",
   "boot.step2": "Optimizing Content Pathways…",
@@ -244,6 +268,8 @@ export const en = {
   "monitor.never": "Never",
   "monitor.empty": "No published content for this filter.",
   "monitor.synced": "Synced “{title}” · {when}",
+  "monitor.syncedWithFeed":
+    "Synced “{title}” · {when} · +{points} AI Data Feed points",
   "monitor.syncAllDone": "SYNC ALL complete · {ok}/{total} content rows updated",
   "monitor.refreshed": "Refreshed local metrics snapshot.",
   "monitor.syncFailed": "Sync failed",
@@ -393,6 +419,20 @@ export const en = {
   "dashboard.stage.PUBLISHED": "Published",
   "dashboard.unit.views": "views",
   "dashboard.unit.likes": "likes",
+
+  "dashboard.feed.badge": "AI Data Feed",
+  "dashboard.feed.phase": "Phase 3 prep · DePIN",
+  "dashboard.feed.title": "AI Data Feed Contribution",
+  "dashboard.feed.body":
+    "Every successful SYNC adds contribution points to your local data feed. This Web2 ledger simulates the signal you will carry into Phase 3 DePIN rewards.",
+  "dashboard.feed.points": "Contribution pts",
+  "dashboard.feed.syncs": "SYNC events",
+  "dashboard.feed.lastDelta": "Last SYNC gain",
+  "dashboard.feed.plusPoints": "+{n}",
+  "dashboard.feed.epoch": "Feed epoch {n}",
+  "dashboard.feed.hint":
+    "Open Monitor Data and press SYNC — watch this meter climb.",
+  "dashboard.feed.ringLabel": "Epoch",
 
   "kanban.handoff.toQueue": "Send to production",
   "kanban.handoff.toBrainstorm": "Back to scripting",

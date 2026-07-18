@@ -9,8 +9,9 @@ import { cn } from "@/lib/utils";
 import { easeOutExpo } from "@/lib/motion";
 
 const NAV: { href: string; key: TranslationKey }[] = [
-  { href: "#mission", key: "nav.mission" },
+  { href: "#problem", key: "nav.problem" },
   { href: "#services", key: "nav.modules" },
+  { href: "#web3-horizon", key: "nav.web3" },
   { href: "#audiences", key: "nav.audiences" },
   { href: "#pricing", key: "nav.pricing" },
   { href: "#faq", key: "nav.faq" },

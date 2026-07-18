@@ -2,103 +2,90 @@ import type { en } from "./en";
 
 /** Indonesian copy — keys must match `en` */
 export const id: Record<keyof typeof en, string> = {
-  "nav.mission": "Misi",
-  "nav.modules": "Modul",
+  "nav.problem": "Masalah",
+  "nav.modules": "Fitur",
+  "nav.web3": "Web3 Horizon",
   "nav.audiences": "Untuk Siapa",
   "nav.pricing": "Harga",
   "nav.faq": "FAQ",
   "nav.login": "Masuk",
-  "nav.cta": "Mulai — Gratis",
-
-  "hero.eyebrow": "Memperkenalkan",
+  "nav.cta": "Mulai Trial Gratis",
+  "hero.eyebrow": "ContentOps untuk agency & builder",
   "hero.title": "Hezntainment",
   "hero.headline":
-    "Workspace content ops multi-brand terdepan untuk agency.",
-  "hero.accent": "Pilih tegas, sync cepat, lacak kebenaran.",
+    "Stop Wasteful Content Operations. Automate Insights, Manage Creative Teams, and Own Your Social Data.",
+  "hero.accent": "X · Instagram · TikTok",
   "hero.body":
-    "Ganti brand (NHM Online → Siinbooth), SYNC metrik TikTok/Instagram, dan cetak Laporan KPI untuk Admin, Sosmed, dan Editor — dalam satu shell.",
-  "hero.ctaPrimary": "Mulai — Gratis",
-  "hero.ctaSecondary": "Coba demo login",
+    "Platform All-in-One ContentOps yang dirancang khusus untuk Social Media Agency dan Web3 Project Builders. Sinkronisasikan data performa dari X, Instagram, dan TikTok secara instan, kelola workflow tim, dan persiapkan aset data Anda untuk era ekonomi terdesentralisasi.",
+  "hero.ctaPrimary": "Start Free Trial (Web2 Core)",
+  "hero.ctaSecondary": "Explore Web3 Roadmap",
   "hero.scroll": "Gulir & temukan",
-
-  "marquee.label": "Menggerakkan desk konten multi-brand",
-
-  "mission.eyebrow": "Misi Kami",
-  "mission.line1":
-    "Konten agency seharusnya tidak hidup di lima aplikasi native dan spreadsheet.",
-  "mission.line2":
-    "Kami memusatkan perencanaan, sync, dan KPI tim — per brand.",
-  "mission.body":
-    "Hezntainment dibuat untuk agency sosial dan tim konten yang menjalankan banyak brand. Ganti workspace, filter Monitor Data & Laporan KPI instan, dan pisahkan tooling Admin dari kerja harian staf.",
-
+  "marquee.label": "Menggerakkan desk ContentOps multi-brand",
+  "problem.eyebrow": "Friksi Industri",
+  "problem.title": "Tiga tantangan yang menahan ContentOps.",
+  "problem.manual.title": "The Manual Grind",
+  "problem.manual.body":
+    "Tim Sosmed menghabiskan puluhan jam berharga hanya untuk membuka dan menyalin metrik insight satu per satu dari X, Instagram, dan TikTok ke lembar Excel.",
+  "problem.friction.title": "Operational Friction",
+  "problem.friction.body":
+    "Koordinasi antara Admin, Sosmed Specialist, dan Editor terpecah di WhatsApp, Trello, dan Google Drive. Kolaborasi berantakan, aset hilang, dan evaluasi KPI menjadi bias.",
+  "problem.data.title": "Exploited Data Value",
+  "problem.data.body":
+    "Data performa konten publik bernilai miliaran dolar untuk melatih AI Model dan analitik periklanan global. Namun data tersebut menguap di server raksasa Web2 tanpa nilai balik bagi agensi dan kreator yang memproduksinya.",
   "welcome.eyebrow": "Produk",
   "welcome.title": "Selamat datang di",
   "welcome.p1":
-    "Hub manajemen sosial all-in-one: kalender editorial, Monitor Data, link tracking, dan administrasi tim berbasis peran.",
+    "Hub ContentOps all-in-one: Monitor Data untuk X / Instagram / TikTok, pipeline produksi RBAC, dan laporan KPI sekali klik.",
   "welcome.p2Strong": "Workspace multi-tenant",
   "welcome.p2":
     " menjaga setiap brand terpisah — ganti dari NHM Online ke Siinbooth dan setiap tampilan metrik dimuat ulang bersih.",
   "welcome.p3":
-    "Mulai dari inti yang dipakai setiap hari — RBAC, antrean sync, dan laporan KPI — lalu scale seats, brand, dan integrasi seiring pertumbuhan tim.",
-  "welcome.caption": "Monitor Data · Laporan KPI · Workspace switcher",
-
-  "features.eyebrow": "Modul inti",
-  "features.title": "Menu yang dipakai agency setiap hari — sudah di satu shell.",
-  "features.included": "Termasuk",
-  "features.kalender.title": "Kalender Editorial",
-  "features.kalender.body":
-    "Timeline konten per workspace — Ideation sampai Published, filtered by active brand.",
-  "features.monitor.title": "Monitor Data",
+    "Mulai dari Web2 Core — SYNC, RBAC, dan KPI — lalu tumbuh ke Web3 Data Horizon saat desk Anda siap.",
+  "welcome.caption": "X · Instagram · TikTok · Laporan KPI · AI Data Feed",
+  "features.eyebrow": "Fase 1 · Fitur Inti",
+  "features.title": "Tiga pilar MNA Content — fokus pada X, Instagram, dan TikTok.",
+  "features.included": "Termasuk di Web2 Core",
+  "features.monitor.title": "Unified Social Monitor (X, Instagram, TikTok)",
   "features.monitor.body":
-    "Summary cards + tabel metrics TikTok & Instagram. Last synced timestamp di setiap baris.",
-  "features.sync.title": "SYNC Engine",
-  "features.sync.body":
-    "Tombol SYNC per URL atau SYNC ALL. Queue backend menghindari rate-limit saat banyak link.",
-  "features.kpi.title": "Laporan KPI",
-  "features.kpi.body":
-    "Sosmed: Create Scripts (DRAFT/PROSES/DONE). Editor: Finish Videos + workload indicator.",
-  "features.team.title": "Manajemen Tim (RBAC)",
-  "features.team.body":
-    "Admin, Sosmed, Editor. Bulk invite untuk agency berkursi banyak — staff tidak melihat billing.",
-  "features.links.title": "Link Click Tracker",
-  "features.links.body":
-    "Lacak outbound / bio links per brand workspace — siap diperluas seiring stack sync Anda tumbuh.",
-
+    "Cukup tempelkan tautan konten pasca-tayang dari X, Instagram, atau TikTok. Mesin scraper kami menarik metrik publik (Views, Likes, Comments, Retweets, Shares) secara otomatis ke satu dasbor terpadu.",
+  "features.pipeline.title": "Role-Based Content Planner & Production Pipeline",
+  "features.pipeline.body":
+    "Rapi dari hulu ke hilir. Pisahkan ruang kerja Admin, Sosmed, dan Editor secara tegas melalui sistem RBAC. Kelola tahap Brainstorming, penulisan skrip, hingga antrean editing video tanpa tumpang tindih.",
+  "features.reporter.title": "One-Click KPI & Conversion Reporter",
+  "features.reporter.body":
+    "Ubah data mentah menjadi keputusan strategis. Hitung Engagement Rate otomatis secara objektif dan ekspor laporan kerja bulanan tim menjadi PDF/Excel dalam sekali klik, lengkap dengan pelacakan konversi tautan via Link Click Tracker.",
   "audiences.eyebrow": "Untuk Siapa",
-  "audiences.title":
-    "Dibangun untuk desk produksi yang menjalankan lebih dari satu brand.",
+  "audiences.title": "Dibangun untuk Social Media Agency dan Web3 Project Builders.",
   "audiences.agency.title": "Social Media Agencies",
   "audiences.agency.body":
-    "Kelola banyak brand client (NHM Online, Siinbooth, …) tanpa campur data Monitor & KPI.",
-  "audiences.brands.title": "Tim brand in-house",
+    "Kelola banyak brand client (NHM Online, Siinbooth, …) tanpa campur data Monitor & KPI di X, Instagram, dan TikTok.",
+  "audiences.brands.title": "Web3 Project Builders",
   "audiences.brands.body":
-    "Kelola beberapa brand milik sendiri di satu tempat — metrik, kalender, dan KPI terpisah tanpa chaos spreadsheet.",
+    "Jalankan ContentOps hari ini di Web2 Core, lalu sambungkan payouts multichain, DID auth, dan kontribusi AI DePIN feed saat siap.",
   "audiences.sosmed.title": "Sosmed Specialists",
   "audiences.sosmed.body":
-    "SYNC published URLs, pantau views/likes, dan isi target Create Scripts tiap bulan.",
+    "SYNC published URLs dari X, Instagram, dan TikTok — pantau views/likes, dan isi target Create Scripts tiap bulan.",
   "audiences.editors.title": "Editors & Admins",
   "audiences.editors.body":
-    "Editor fokusat Finish Videos + workload. Admin pegang seats, inventaris brand, dan PRINT REPORT.",
-
+    "Editor fokus Finish Videos + workload. Admin pegang seats, inventaris brand, dan PRINT REPORT.",
   "pricing.eyebrow": "Harga",
   "pricing.title": "Harga sederhana. Scale seats & brand, bukan spreadsheet.",
-  "pricing.cta": "Mulai — Gratis",
+  "pricing.cta": "Mulai Trial Gratis",
   "pricing.note": "*Batas fair-use berlaku selama beta.",
   "pricing.perMonth": "/bln",
   "pricing.creator.blurb": "Solo / small pod — satu brand workspace.",
   "pricing.creator.f1": "1 workspace",
   "pricing.creator.f2": "Hingga 5 seats",
   "pricing.creator.f3": "Kalender + Monitor Data",
-  "pricing.creator.f4": "SYNC queue (TikTok / IG / YT)",
+  "pricing.creator.f4": "SYNC queue (X / Instagram / TikTok)",
   "pricing.creator.f5": "Laporan KPI CSV",
-  "pricing.agency.blurb": "Agency multi-brand & desk konten yang berkembang.",
+  "pricing.agency.blurb": "Agency multi-brand & desk konten Web3.",
   "pricing.agency.f1": "Workspace unlimited*",
   "pricing.agency.f2": "Hingga 25 seats + bulk invite",
   "pricing.agency.f3": "RBAC: Admin / Sosmed / Editor",
   "pricing.agency.f4": "Monitor Data + PRINT laporan KPI",
   "pricing.agency.f5": "Priority SYNC queue",
-  "pricing.agency.f6": "API & webhook (roadmap)",
-
+  "pricing.agency.f6": "Akses roadmap Web3 Data Horizon",
   "faq.eyebrow": "FAQ",
   "faq.title": "Jawaban langsung sebelum trial.",
   "faq.q1": "Apa bedanya workspace switcher?",
@@ -106,44 +93,39 @@ export const id: Record<keyof typeof en, string> = {
     "Setiap brand (mis. NHM Online, Siinbooth) adalah workspace terpisah. Ganti brand di sidebar, maka Monitor Data dan Laporan KPI memuat ulang hanya data workspace aktif.",
   "faq.q2": "Platform apa yang di-SYNC di Monitor Data?",
   "faq.a2":
-    "Metrik publik TikTok, Instagram, dan YouTube. SYNC per baris atau SYNC ALL masuk antrean agar tidak kena rate-limit.",
+    "Metrik publik dari X, Instagram, dan TikTok. SYNC per baris atau SYNC ALL masuk antrean agar tidak kena rate-limit.",
   "faq.q3": "Bagaimana KPI Sosmed vs Editor dihitung?",
   "faq.a3":
     "Sosmed menarget Create Scripts (breakdown DRAFT / PROSES / DONE). Editor menarget Finish Videos — dihitung saat status jadi READY_TO_REVIEW atau PUBLISHED di bulan berjalan.",
   "faq.q4": "Apakah Editor bisa lihat billing atau Manajemen Tim?",
   "faq.a4":
     "Tidak. Menu Administrasi (Tim, Inventaris Brand) khusus Admin. Editor fokusat Dashboard/Kalender; Sosmed bisa Monitor Data + Laporan KPI.",
-  "faq.q5": "Bisakah kami sambungkan tools sendiri nanti?",
+  "faq.q5": "Apakah produk terkunci ke satu blockchain?",
   "faq.a5":
-    "Bisa. Produk dibangun di sekitar alur Monitor & KPI harian dulu. API dan webhook ada di roadmap agar Anda bisa menyambung reporting atau otomasi tanpa mengubah cara kerja tim.",
-
+    "Tidak. Web2 Core tersedia hari ini. Web3 Data Horizon multichain by design — EVM, SVM, Move, dan L2s — dengan DID auth, cross-chain payouts, dan kontribusi AI DePIN feed di roadmap.",
   "cta.eyebrow": "Ayo Mulai",
-  "cta.title": "Siap jalankan Monitor Data & KPI dalam satu shell?",
+  "cta.title": "Siap jalankan ContentOps tanpa grind?",
   "cta.body":
-    "Buat trial Admin, undang Sosmed/Editor, switch brand workspace, lalu SYNC konten published pertama Anda.",
+    "Mulai Free Trial di Web2 Core, undang Sosmed/Editor, SYNC post X / Instagram / TikTok pertama — dan lihat poin AI Data Feed naik.",
   "cta.bullet1": "Workspace multi-brand · RBAC Admin / Sosmed / Editor",
-  "cta.bullet2": "Dirancang untuk role Admin, Sosmed & Editor",
-  "cta.bullet3": "Demo: admin@hezntainment.com / password123",
+  "cta.bullet2": "Unified Monitor untuk X, Instagram, TikTok",
+  "cta.bullet3": "Kontribusi AI Data Feed menuju Fase 3 DePIN",
   "cta.cardTitle": "Buka Hezntainment",
   "cta.cardBody":
     "Setelah login Anda masuk ke dashboard manajemen konten — siap ganti brand, SYNC post, dan review KPI.",
   "cta.login": "Masuk ke demo",
-
-  "footer.tagline":
-    "Manajemen konten, Monitor Data, dan Laporan KPI untuk agency multi-brand.",
+  "footer.tagline": "ContentOps untuk agency & builder Web3 — X, Instagram, TikTok, dan jalur ke DePIN.",
   "footer.product": "Produk",
   "footer.connect": "Hubungi",
-  "footer.modules": "Modul",
+  "footer.modules": "Fitur",
   "footer.pricing": "Harga",
   "footer.demo": "Buka demo",
   "footer.trial": "Mulai Trial Gratis",
-  "footer.phase2": "API & integrasi — segera hadir",
+  "footer.phase2": "Web3 Data Horizon — roadmap multichain",
   "footer.rights": "Hak cipta dilindungi.",
-
   "lang.en": "EN",
   "lang.id": "ID",
   "lang.label": "Bahasa",
-
   "sidebar.brand": "MNA Content",
   "sidebar.subtitle": "Manajemen Konten",
   "sidebar.menuMain": "Menu Utama",
@@ -156,7 +138,6 @@ export const id: Record<keyof typeof en, string> = {
   "sidebar.close": "Tutup menu",
   "sidebar.expand": "Perlebar sidebar",
   "sidebar.collapse": "Geser sidebar",
-
   "nav.dashboard": "Dashboard",
   "nav.kalender": "Kalender Editorial",
   "nav.monitor": "Monitor Data",
@@ -166,10 +147,8 @@ export const id: Record<keyof typeof en, string> = {
   "nav.tim": "Manajemen Tim",
   "nav.inventaris": "Inventaris Brand",
   "nav.kpi": "Laporan KPI",
-
   "auth.welcome": "Selamat datang kembali",
-  "auth.welcomeBody":
-    "Masuk dengan email/password. Google Auth aktif saat kunci OAuth disetel.",
+  "auth.welcomeBody": "Masuk dengan email/password. Google Auth aktif saat kunci OAuth disetel.",
   "auth.email": "Email",
   "auth.password": "Password",
   "auth.signIn": "Masuk",
@@ -177,13 +156,11 @@ export const id: Record<keyof typeof en, string> = {
   "auth.invalid": "Email atau password salah.",
   "auth.configError":
     "Auth server belum dikonfigurasi. Di Vercel set AUTH_SECRET + AUTH_URL, lalu Redeploy. Cek /api/health/auth",
-  "auth.sessionFailed":
-    "Login tidak membuat session. Pastikan AUTH_URL sama dengan URL situs ini, lalu Redeploy.",
+  "auth.sessionFailed": "Login tidak membuat session. Pastikan AUTH_URL sama dengan URL situs ini, lalu Redeploy.",
   "auth.newHere": "Baru di sini?",
   "auth.createWorkspace": "Buat workspace",
   "auth.demoHint": "Semua role masuk MNA Content · ganti brand di sidebar",
   "auth.demoAccounts": "admin@ / sosmed@ / editor@hezntainment.com · password123",
-
   "register.title": "Mulai trial gratis",
   "register.body": "Buat akun Admin, lalu undang rekan Sosmed dan Editor.",
   "register.name": "Nama lengkap",
@@ -192,7 +169,6 @@ export const id: Record<keyof typeof en, string> = {
   "register.submit": "Mulai — Gratis",
   "register.creating": "Membuat…",
   "register.haveAccount": "Sudah punya akun?",
-
   "dashboard.title": "Dashboard",
   "dashboard.body":
     "MNA Content — operasional konten, monitor performa, dan KPI tim dalam satu ruang kerja multi-brand.",
@@ -201,32 +177,55 @@ export const id: Record<keyof typeof en, string> = {
   "dashboard.card.brainstorm": "Kanban ideation & scripting.",
   "dashboard.card.antrean": "Antrean editing sampai review.",
   "dashboard.card.links": "Performa link bio / outbound.",
-
   "testimonials.eyebrow": "Kata Tim Produksi",
   "testimonials.title": "Dari lantai produksi, bukan pitch slide.",
-  "testimonials.q1": "SYNC ALL di Monitor Data menggantikan buka TikTok/IG satu-satu. Client review jadi soal buka Laporan KPI, bukan screenshot malam-malam.",
+  "testimonials.q1":
+    "SYNC ALL di Monitor Data menggantikan buka X / Instagram / TikTok satu-satu. Client review jadi soal buka Laporan KPI, bukan screenshot malam-malam.",
   "testimonials.q1.role": "Sosmed Lead, agency multi-brand",
-  "testimonials.q2": "Switch workspace NHM Online ke Siinbooth dan seluruh tabel metrics ikut bersih. Itu yang kami butuhkan untuk tim 20+ seat.",
+  "testimonials.q2":
+    "Switch workspace NHM Online ke Siinbooth dan seluruh tabel metrics ikut bersih. Itu yang kami butuhkan untuk tim 20+ seat.",
   "testimonials.q2.role": "Agency Admin",
-  "testimonials.q3": "Editor cuma lihat workload & Finish Videos. Admin pegang seats. Role-nya benar-benar terpisah — bukan satu dashboard untuk semua.",
+  "testimonials.q3":
+    "Editor cuma lihat workload & Finish Videos. Admin pegang seats. Role-nya benar-benar terpisah — bukan satu dashboard untuk semua.",
   "testimonials.q3.role": "Video Editor",
-
   "pillars.explore": "Jelajahi",
-  "pillars.monitor.title": "Monitor Data",
-  "pillars.monitor.copy": "Views, likes, comments, shares per brand — SYNC satu post atau SYNC ALL lewat antrean scrape.",
-  "pillars.monitor.alt": "Dashboard metrik performa untuk konten sosial yang sudah published",
-  "pillars.kpi.title": "Laporan KPI",
-  "pillars.kpi.copy": "Produktivitas bulanan Sosmed & Editor dengan progress bar, badge status, dan PRINT REPORT.",
-  "pillars.kpi.alt": "Laporan KPI tim dengan pelacakan progress",
-  "pillars.workspace.title": "Workspace Multi-Brand",
-  "pillars.workspace.copy": "Ganti NHM Online ↔ Siinbooth instan. Seat Admin tetap terpisah dari kerja harian staf.",
-  "pillars.workspace.alt": "Perencanaan produksi kreatif untuk banyak brand client",
-
+  "pillars.monitor.title": "Unified Social Monitor",
+  "pillars.monitor.copy":
+    "Tempel tautan published dari X, Instagram, atau TikTok — tarik Views, Likes, Comments, Retweets, dan Shares ke satu dasbor.",
+  "pillars.monitor.alt": "Monitor sosial terpadu untuk X, Instagram, dan TikTok",
+  "pillars.kpi.title": "KPI & Conversion Reporter",
+  "pillars.kpi.copy":
+    "Hitung engagement objektif plus ekspor PDF/Excel sekali klik — dengan jejak konversi Link Click Tracker.",
+  "pillars.kpi.alt": "Laporan KPI dan konversi tim",
+  "pillars.workspace.title": "RBAC Production Pipeline",
+  "pillars.workspace.copy":
+    "Pisahkan ruang Admin, Sosmed, dan Editor. Brainstorming → scripting → antrean editing tanpa tumpang tindih.",
+  "pillars.workspace.alt": "Pipeline produksi konten berbasis peran",
+  "web3.eyebrow": "The Web3 Data Horizon",
+  "web3.title": "Built for Web2 Scale, Engineered for the Web3 Economy.",
+  "web3.body":
+    "Kami percaya data performa adalah aset digital berharga. ContentOps Engine dibangun dengan arsitektur hybrid yang siap bertransisi ke Web3 secara general. Di Fase 2, platform terintegrasi secara multichain untuk membuka potensi ekonomi baru:",
+  "web3.auth.title": "Universal Web3 Authentication",
+  "web3.auth.body":
+    "Hubungkan akun tim menggunakan decentralized identity (DID) dan hybrid wallet — terlepas dari blockchain network yang Anda gunakan.",
+  "web3.payouts.title": "Cross-Chain Automated Payouts",
+  "web3.payouts.body":
+    "Ekosistem smart contract universal yang memungkinkan agensi dan proyek Web3 (EVM, SVM, maupun Move) mencairkan insentif bonus bulanan berbentuk stablecoin langsung ke dompet digital tim berdasarkan laporan KPI yang valid.",
+  "web3.hash.title": "Immutable IP Content Hashing",
+  "web3.hash.body":
+    "Daftarkan hash aset video final ke blockchain ledger sebelum diunggah ke publik sebagai Proof of Origin yang permanen dan tidak bisa dimanipulasi.",
+  "web3.feed.title": "Future AI DePIN Feed Contribution",
+  "web3.feed.body":
+    "Kumpulkan poin kontribusi data analitik dari aktivitas harian di platform, mempersiapkan agensi Anda untuk rewards bagi hasil dari penyediaan dataset pelatihan AI global.",
+  "web3.feed.badge": "AI Data Feed Points",
+  "web3.feed.live": "Live dari ledger Web2 Core Anda",
+  "web3.feed.hint":
+    "Selaras dengan meter kontribusi di Dashboard. SYNC konten hari ini — bank poin untuk Fase 3 DePIN.",
+  "web3.cta": "Mulai Free Trial di Web2 Core",
   "boot.step1": "Menginisialisasi Engine Hezntainment…",
   "boot.step2": "Mengoptimalkan Jalur Konten…",
   "boot.step3": "Mengonfigurasi SYNC Real-Time…",
   "boot.step4": "Mengaktifkan Sinyal Multi-Brand…",
-
   "monitor.title": "Monitor Data",
   "monitor.body": "Agregat metrik publik + antrean SYNC untuk konten published.",
   "monitor.views": "Total Views",
@@ -248,12 +247,12 @@ export const id: Record<keyof typeof en, string> = {
   "monitor.never": "Belum pernah",
   "monitor.empty": "Tidak ada konten published untuk filter ini.",
   "monitor.synced": "Tersync “{title}” · {when}",
+  "monitor.syncedWithFeed": "Synced “{title}” · {when} · +{points} AI Data Feed points",
   "monitor.syncAllDone": "SYNC ALL selesai · {ok}/{total} baris konten diperbarui",
   "monitor.refreshed": "Snapshot metrik lokal dimuat ulang.",
   "monitor.syncFailed": "SYNC gagal",
   "monitor.networkError": "Kesalahan jaringan saat sync.",
   "monitor.updated": "diperbarui",
-
   "kpi.title": "Laporan KPI",
   "kpi.body": "Produktivitas bulanan ·",
   "kpi.print": "PRINT REPORT",
@@ -271,7 +270,6 @@ export const id: Record<keyof typeof en, string> = {
   "kpi.status.onTrack": "ON TRACK",
   "kpi.status.slowStart": "SLOW START",
   "kpi.status.catchingUp": "MENGEJAR",
-
   "kanban.ideation.title": "Brainstorming (Ide)",
   "kanban.ideation.hint": "Tangkap hook & angle",
   "kanban.scripting.title": "Scripting",
@@ -291,7 +289,6 @@ export const id: Record<keyof typeof en, string> = {
   "kanban.brainstorm.body": "Pipeline ideation & scripting untuk brief kreatif",
   "kanban.antrean.title": "Antrean Produksi",
   "kanban.antrean.body": "Antrean editing sampai handoff ready-to-review",
-
   "links.title": "Link Click Tracker",
   "links.body": "Link outbound / bio untuk",
   "links.totalClicks": "{n} total klik",
@@ -309,14 +306,12 @@ export const id: Record<keyof typeof en, string> = {
   "links.empty": "Belum ada link. Buat satu untuk mulai mengukur klik.",
   "links.errRequired": "Label dan URL tujuan wajib diisi.",
   "links.errUrl": "Masukkan URL absolut yang valid (https://…).",
-
   "calendar.title": "Kalender Editorial",
   "calendar.body": "Due date & milestone pipeline ·",
   "calendar.schedule": "Jadwal Juli 2026",
   "calendar.inPipeline": "Dalam pipeline",
   "calendar.published": "Published",
   "calendar.empty": "Tidak ada item editorial untuk workspace ini.",
-
   "team.pageTitle": "Manajemen Tim",
   "team.pageBody": "Khusus Admin — undang seat Sosmed/Editor di seluruh staf agency.",
   "team.seatUsage": "Paket {plan} · penggunaan seat",
@@ -336,10 +331,10 @@ export const id: Record<keyof typeof en, string> = {
   "team.colStatus": "Status",
   "team.colActive": "Terakhir aktif",
   "team.errEmail": "Masukkan email yang valid.",
-  "team.inviteQueued": "Undangan diantrekan untuk {email} sebagai {role} (stub demo — sambungkan provider email berikutnya).",
+  "team.inviteQueued":
+    "Undangan diantrekan untuk {email} sebagai {role} (stub demo — sambungkan provider email berikutnya).",
   "team.bulkPaste": "Tempel satu email per baris (atau dipisah koma).",
   "team.bulkQueued": "{n} undangan diantrekan sebagai {role}. Sisa seat: {seats}.",
-
   "inventory.title": "Inventaris Brand",
   "inventory.body": "Aset brand & catatan ·",
   "inventory.add": "Tambah item inventaris",
@@ -347,20 +342,16 @@ export const id: Record<keyof typeof en, string> = {
   "inventory.notesPh": "Catatan",
   "inventory.addBtn": "Tambah",
   "inventory.empty": "Belum ada item inventaris untuk workspace ini.",
-
   "workspace.switchTo": "Ganti ke {name}",
   "workspace.brand": "Brand · {code}",
   "workspace.hint": "Mengganti workspace memfilter Monitor Data & Laporan KPI sepenuhnya.",
-
   "onboarding.title": "Siapkan workspace Anda",
   "onboarding.body": "Admin membuat workspace dulu, lalu mengundang rekan Sosmed dan Editor.",
   "onboarding.name": "Nama workspace",
   "onboarding.invite": "Undang rekan (opsional)",
   "onboarding.enter": "Masuk workspace",
-
   "common.loading": "Memuat…",
   "common.closeOverlay": "Tutup overlay",
-
   "dashboard.overview": "Ringkasan",
   "dashboard.greeting": "Selamat datang, {name}",
   "dashboard.greetingAnon": "Selamat datang kembali",
@@ -397,7 +388,18 @@ export const id: Record<keyof typeof en, string> = {
   "dashboard.stage.PUBLISHED": "Published",
   "dashboard.unit.views": "views",
   "dashboard.unit.likes": "likes",
-
+  "dashboard.feed.badge": "AI Data Feed",
+  "dashboard.feed.phase": "Phase 3 prep · DePIN",
+  "dashboard.feed.title": "AI Data Feed Contribution",
+  "dashboard.feed.body":
+    "Every successful SYNC adds contribution points to your local data feed. This Web2 ledger simulates the signal you will carry into Phase 3 DePIN rewards.",
+  "dashboard.feed.points": "Contribution pts",
+  "dashboard.feed.syncs": "SYNC events",
+  "dashboard.feed.lastDelta": "Last SYNC gain",
+  "dashboard.feed.plusPoints": "+{n}",
+  "dashboard.feed.epoch": "Feed epoch {n}",
+  "dashboard.feed.hint": "Open Monitor Data and press SYNC — watch this meter climb.",
+  "dashboard.feed.ringLabel": "Epoch",
   "kanban.handoff.toQueue": "Kirim ke produksi",
   "kanban.handoff.toBrainstorm": "Kembali ke scripting",
   "kanban.handoff.hint": "Memindahkan kartu ke board lain",

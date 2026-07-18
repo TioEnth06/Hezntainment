@@ -26,24 +26,24 @@ export const NAV_LABEL_KEYS: Record<string, TranslationKey> = {
 
 export const MARQUEE_ITEMS: Record<Locale, readonly string[]> = {
   en: [
-    "Monitor Data",
-    "SYNC Engine",
-    "KPI Report",
+    "Unified Social Monitor",
+    "X · Instagram · TikTok",
+    "RBAC Pipeline",
+    "One-Click KPI Reporter",
+    "AI Data Feed Points",
+    "Web3 Data Horizon",
     "Multi-Brand Workspaces",
-    "RBAC · Admin / Sosmed / Editor",
-    "Link Click Tracker",
-    "Editorial Calendar",
-    "NHM Online ↔ Siinbooth",
+    "Cross-Chain Ready",
   ],
   id: [
-    "Monitor Data",
-    "SYNC Engine",
-    "Laporan KPI",
+    "Unified Social Monitor",
+    "X · Instagram · TikTok",
+    "Pipeline RBAC",
+    "Laporan KPI Sekali Klik",
+    "AI Data Feed Points",
+    "Web3 Data Horizon",
     "Workspace Multi-Brand",
-    "RBAC · Admin / Sosmed / Editor",
-    "Link Click Tracker",
-    "Kalender Editorial",
-    "NHM Online ↔ Siinbooth",
+    "Siap Cross-Chain",
   ],
 };
 

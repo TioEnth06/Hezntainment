@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s · Hezntainment",
   },
   description:
-    "Hezntainment: multi-brand content ops for agencies. Monitor Data, SYNC insights, Laporan KPI, and RBAC for Admin, Sosmed, and Editor.",
+    "Hezntainment ContentOps: sync X, Instagram & TikTok, manage creative teams with RBAC, and prepare social data for the Web3 economy.",
 };
 
 export default function RootLayout({

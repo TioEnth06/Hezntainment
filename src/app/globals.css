@@ -155,6 +155,44 @@ body {
   }
 }
 
+@keyframes feed-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 108, 255, 0);
+  }
+  30% {
+    box-shadow:
+      0 0 0 1px rgba(102, 108, 255, 0.45),
+      0 12px 40px rgba(140, 82, 255, 0.18);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 108, 255, 0);
+  }
+}
+
+@keyframes feed-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.feed-pulse-glow {
+  animation: feed-glow 1.6s ease-out 1;
+}
+
+.feed-pulse-value {
+  animation: feed-pop 0.7s ease-out 1;
+}
+
+.feed-pulse-zap {
+  animation: feed-pop 0.7s ease-out 1;
+}
+
 .orb-float {
   animation: orb-float 9s ease-in-out infinite;
 }
@@ -200,7 +238,10 @@ body {
   .boot-ring,
   .boot-ring-inner,
   .boot-cursor,
-  .scroll-cue {
+  .scroll-cue,
+  .feed-pulse-glow,
+  .feed-pulse-value,
+  .feed-pulse-zap {
     animation: none !important;
   }
 }
