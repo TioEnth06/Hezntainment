@@ -30,6 +30,10 @@ npx prisma migrate dev --name mna_init
 npx prisma db seed
 ```
 
+## Deploy on Vercel
+
+See [`docs/VERCEL.md`](./docs/VERCEL.md). Minimum env: `AUTH_SECRET` + `AUTH_URL`. Demo logins work without Postgres.
+
 ## Key paths
 
 | Path | Purpose |
