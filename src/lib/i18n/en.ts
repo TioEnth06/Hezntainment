@@ -25,7 +25,7 @@ export const en = {
     "Agency content shouldn't live in five native apps and a spreadsheet.",
   "mission.line2": "We centralize planning, sync, and team KPI — per brand.",
   "mission.body":
-    "Hezntainment is built for social agencies and Web3 projects that run multiple brands. Switch workspace, filter Monitor Data & Laporan KPI instantly, and keep Admin tooling away from day-to-day staff views.",
+    "Hezntainment is built for social agencies and content teams that run multiple brands. Switch workspace, filter Monitor Data & KPI reports instantly, and keep Admin tooling away from day-to-day staff views.",
 
   "welcome.eyebrow": "Product",
   "welcome.title": "Welcome to",
@@ -35,12 +35,12 @@ export const en = {
   "welcome.p2":
     " keep every brand isolated — switch from NHM Online to Siinbooth and every metric view remounts cleanly.",
   "welcome.p3":
-    "Phase 1 ships the Web2 core (RBAC, sync queue, KPI reports). Phase 2 plugs into Superteam / Solana without rewriting daily ops.",
+    "Start with the core you need every day — RBAC, sync queue, and KPI reports — then grow seats, brands, and integrations as the team scales.",
   "welcome.caption": "Monitor Data · Laporan KPI · Workspace switcher",
 
   "features.eyebrow": "Core modules",
   "features.title": "Menus agencies use every day — already in one shell.",
-  "features.included": "Included in Phase 1",
+  "features.included": "Included",
   "features.kalender.title": "Editorial Calendar",
   "features.kalender.body":
     "Content timeline per workspace — Ideation to Published, filtered by active brand.",
@@ -58,7 +58,7 @@ export const en = {
     "Admin, Sosmed, Editor. Bulk invite for large seats — staff never see billing.",
   "features.links.title": "Link Click Tracker",
   "features.links.body":
-    "Track outbound / bio links per brand workspace (Phase 1 stub, ready to wire after sync stabilizes).",
+    "Track outbound / bio links per brand workspace — ready to expand as your sync stack grows.",
 
   "audiences.eyebrow": "Who We Serve",
   "audiences.title":
@@ -66,9 +66,9 @@ export const en = {
   "audiences.agency.title": "Social Media Agencies",
   "audiences.agency.body":
     "Run many client brands (NHM Online, Siinbooth, …) without mixing Monitor & KPI data.",
-  "audiences.web3.title": "Web3 / Superteam Projects",
-  "audiences.web3.body":
-    "Web2 ops first — Phase 2 roadmap plugs Superteam Hub without changing the daily board.",
+  "audiences.brands.title": "In-house brand teams",
+  "audiences.brands.body":
+    "Run several owned brands in one place — separate metrics, calendars, and KPI views without spreadsheet chaos.",
   "audiences.sosmed.title": "Sosmed Specialists",
   "audiences.sosmed.body":
     "SYNC published URLs, watch views/likes, and hit Create Scripts targets each month.",
@@ -87,13 +87,13 @@ export const en = {
   "pricing.creator.f3": "Calendar + Monitor Data",
   "pricing.creator.f4": "SYNC queue (TikTok / IG / YT)",
   "pricing.creator.f5": "KPI report CSV",
-  "pricing.agency.blurb": "Multi-brand agencies & Web3 project teams.",
+  "pricing.agency.blurb": "Multi-brand agencies & growing content desks.",
   "pricing.agency.f1": "Unlimited workspaces*",
   "pricing.agency.f2": "Up to 25 seats + bulk invite",
   "pricing.agency.f3": "RBAC: Admin / Sosmed / Editor",
   "pricing.agency.f4": "Monitor Data + PRINT KPI report",
   "pricing.agency.f5": "Priority SYNC queue",
-  "pricing.agency.f6": "Superteam Hub connect (Phase 2)",
+  "pricing.agency.f6": "API & webhook integrations (roadmap)",
 
   "faq.eyebrow": "FAQ",
   "faq.title": "Straight answers before your trial.",
@@ -102,27 +102,27 @@ export const en = {
     "Each brand (e.g. NHM Online, Siinbooth) is a separate workspace. Switch brand in the sidebar and Monitor Data + KPI Report reload only the active workspace.",
   "faq.q2": "Which platforms SYNC into Monitor Data?",
   "faq.a2":
-    "Phase 1: public TikTok, Instagram, and YouTube metrics. Per-row SYNC or SYNC ALL enters a queue to avoid rate-limits.",
+    "Public TikTok, Instagram, and YouTube metrics. Per-row SYNC or SYNC ALL enters a queue to avoid rate-limits.",
   "faq.q3": "How are Sosmed vs Editor KPIs counted?",
   "faq.a3":
     "Sosmed targets Create Scripts (DRAFT / PROSES / DONE). Editor targets Finish Videos — counted when status becomes READY_TO_REVIEW or PUBLISHED in the current month.",
   "faq.q4": "Can Editors see billing or Team Management?",
   "faq.a4":
     "No. Administration (Team, Brand Inventory) is Admin-only. Editors focus on Dashboard/Calendar; Sosmed can open Monitor Data + KPI Report.",
-  "faq.q5": "When is Web3 / Superteam integration?",
+  "faq.q5": "Can we connect our own tools later?",
   "faq.a5":
-    "Phase 1 locks the Web2 core. Phase 2 adds Connect via Superteam Hub without changing the Monitor & KPI flows you already use daily.",
+    "Yes. The product is built around daily Monitor & KPI workflows first. API and webhook integrations are on the roadmap so you can plug in reporting or automation without changing how the team works today.",
 
   "cta.eyebrow": "Let's Get Started",
   "cta.title": "Ready to run Monitor Data & KPI in one shell?",
   "cta.body":
     "Create an Admin trial, invite Sosmed/Editor, switch brand workspace, then SYNC your first published content.",
   "cta.bullet1": "Multi-brand workspaces · RBAC Admin / Sosmed / Editor",
-  "cta.bullet2": "Phase 1 Web2 · Phase 2 Superteam-ready",
+  "cta.bullet2": "Built for Admin, Sosmed & Editor roles",
   "cta.bullet3": "Demo: admin@hezntainment.com / password123",
   "cta.cardTitle": "Open Hezntainment",
   "cta.cardBody":
-    "After login you land in the content ops dashboard. Superteam Hub connect follows in Phase 2.",
+    "After login you land in the content ops dashboard — ready to switch brands, SYNC posts, and review KPI.",
   "cta.login": "Log in to demo",
 
   "footer.tagline":
@@ -133,7 +133,7 @@ export const en = {
   "footer.pricing": "Pricing",
   "footer.demo": "Open demo",
   "footer.trial": "Start Free Trial",
-  "footer.phase2": "Connect via Superteam Hub — Phase 2",
+  "footer.phase2": "API & integrations — coming soon",
   "footer.rights": "All rights reserved.",
 
   "lang.en": "EN",
@@ -328,7 +328,7 @@ export const en = {
   "team.colStatus": "Status",
   "team.colActive": "Last active",
   "team.errEmail": "Enter a valid email.",
-  "team.inviteQueued": "Invite queued for {email} as {role} (Phase 1 stub — wire email provider next).",
+  "team.inviteQueued": "Invite queued for {email} as {role} (demo stub — wire email provider next).",
   "team.bulkPaste": "Paste one email per line (or comma-separated).",
   "team.bulkQueued": "{n} invites queued as {role}. Remaining seats: {seats}.",
 

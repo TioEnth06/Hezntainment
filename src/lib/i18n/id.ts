@@ -29,7 +29,7 @@ export const id: Record<keyof typeof en, string> = {
   "mission.line2":
     "Kami memusatkan perencanaan, sync, dan KPI tim — per brand.",
   "mission.body":
-    "Hezntainment dibuat untuk agency sosial dan proyek Web3 yang menjalankan banyak brand. Ganti workspace, filter Monitor Data & Laporan KPI instan, dan pisahkan tooling Admin dari kerja harian staf.",
+    "Hezntainment dibuat untuk agency sosial dan tim konten yang menjalankan banyak brand. Ganti workspace, filter Monitor Data & Laporan KPI instan, dan pisahkan tooling Admin dari kerja harian staf.",
 
   "welcome.eyebrow": "Produk",
   "welcome.title": "Selamat datang di",
@@ -39,12 +39,12 @@ export const id: Record<keyof typeof en, string> = {
   "welcome.p2":
     " menjaga setiap brand terpisah — ganti dari NHM Online ke Siinbooth dan setiap tampilan metrik dimuat ulang bersih.",
   "welcome.p3":
-    "Phase 1 mengirim inti Web2 (RBAC, antrean sync, laporan KPI). Phase 2 menyambung Superteam / Solana tanpa menulis ulang ops harian.",
+    "Mulai dari inti yang dipakai setiap hari — RBAC, antrean sync, dan laporan KPI — lalu scale seats, brand, dan integrasi seiring pertumbuhan tim.",
   "welcome.caption": "Monitor Data · Laporan KPI · Workspace switcher",
 
   "features.eyebrow": "Modul inti",
   "features.title": "Menu yang dipakai agency setiap hari — sudah di satu shell.",
-  "features.included": "Termasuk di Phase 1",
+  "features.included": "Termasuk",
   "features.kalender.title": "Kalender Editorial",
   "features.kalender.body":
     "Timeline konten per workspace — Ideation sampai Published, filtered by active brand.",
@@ -62,7 +62,7 @@ export const id: Record<keyof typeof en, string> = {
     "Admin, Sosmed, Editor. Bulk invite untuk agency berkursi banyak — staff tidak melihat billing.",
   "features.links.title": "Link Click Tracker",
   "features.links.body":
-    "Lacak outbound / bio links per brand workspace (Phase 1 stub, siap di-wire setelah sync stabil).",
+    "Lacak outbound / bio links per brand workspace — siap diperluas seiring stack sync Anda tumbuh.",
 
   "audiences.eyebrow": "Untuk Siapa",
   "audiences.title":
@@ -70,9 +70,9 @@ export const id: Record<keyof typeof en, string> = {
   "audiences.agency.title": "Social Media Agencies",
   "audiences.agency.body":
     "Kelola banyak brand client (NHM Online, Siinbooth, …) tanpa campur data Monitor & KPI.",
-  "audiences.web3.title": "Web3 / Superteam Projects",
-  "audiences.web3.body":
-    "Ops Web2 dulu — roadmap Phase 2 siap hubungkan Superteam Hub tanpa ganti board harian.",
+  "audiences.brands.title": "Tim brand in-house",
+  "audiences.brands.body":
+    "Kelola beberapa brand milik sendiri di satu tempat — metrik, kalender, dan KPI terpisah tanpa chaos spreadsheet.",
   "audiences.sosmed.title": "Sosmed Specialists",
   "audiences.sosmed.body":
     "SYNC published URLs, pantau views/likes, dan isi target Create Scripts tiap bulan.",
@@ -91,13 +91,13 @@ export const id: Record<keyof typeof en, string> = {
   "pricing.creator.f3": "Kalender + Monitor Data",
   "pricing.creator.f4": "SYNC queue (TikTok / IG / YT)",
   "pricing.creator.f5": "Laporan KPI CSV",
-  "pricing.agency.blurb": "Agency multi-brand & tim proyek Web3.",
+  "pricing.agency.blurb": "Agency multi-brand & desk konten yang berkembang.",
   "pricing.agency.f1": "Workspace unlimited*",
   "pricing.agency.f2": "Hingga 25 seats + bulk invite",
   "pricing.agency.f3": "RBAC: Admin / Sosmed / Editor",
   "pricing.agency.f4": "Monitor Data + PRINT laporan KPI",
   "pricing.agency.f5": "Priority SYNC queue",
-  "pricing.agency.f6": "Superteam Hub connect (Phase 2)",
+  "pricing.agency.f6": "API & webhook (roadmap)",
 
   "faq.eyebrow": "FAQ",
   "faq.title": "Jawaban langsung sebelum trial.",
@@ -106,27 +106,27 @@ export const id: Record<keyof typeof en, string> = {
     "Setiap brand (mis. NHM Online, Siinbooth) adalah workspace terpisah. Ganti brand di sidebar, maka Monitor Data dan Laporan KPI memuat ulang hanya data workspace aktif.",
   "faq.q2": "Platform apa yang di-SYNC di Monitor Data?",
   "faq.a2":
-    "Phase 1: metrik publik TikTok, Instagram, dan YouTube. SYNC per baris atau SYNC ALL masuk antrean agar tidak kena rate-limit.",
+    "Metrik publik TikTok, Instagram, dan YouTube. SYNC per baris atau SYNC ALL masuk antrean agar tidak kena rate-limit.",
   "faq.q3": "Bagaimana KPI Sosmed vs Editor dihitung?",
   "faq.a3":
     "Sosmed menarget Create Scripts (breakdown DRAFT / PROSES / DONE). Editor menarget Finish Videos — dihitung saat status jadi READY_TO_REVIEW atau PUBLISHED di bulan berjalan.",
   "faq.q4": "Apakah Editor bisa lihat billing atau Manajemen Tim?",
   "faq.a4":
     "Tidak. Menu Administrasi (Tim, Inventaris Brand) khusus Admin. Editor fokusat Dashboard/Kalender; Sosmed bisa Monitor Data + Laporan KPI.",
-  "faq.q5": "Kapan integrasi Web3 / Superteam?",
+  "faq.q5": "Bisakah kami sambungkan tools sendiri nanti?",
   "faq.a5":
-    "Phase 1 mengunci Web2 core. Phase 2 menambahkan Connect via Superteam Hub tanpa mengubah alur Monitor & KPI yang sudah dipakai harian.",
+    "Bisa. Produk dibangun di sekitar alur Monitor & KPI harian dulu. API dan webhook ada di roadmap agar Anda bisa menyambung reporting atau otomasi tanpa mengubah cara kerja tim.",
 
   "cta.eyebrow": "Ayo Mulai",
   "cta.title": "Siap jalankan Monitor Data & KPI dalam satu shell?",
   "cta.body":
     "Buat trial Admin, undang Sosmed/Editor, switch brand workspace, lalu SYNC konten published pertama Anda.",
   "cta.bullet1": "Workspace multi-brand · RBAC Admin / Sosmed / Editor",
-  "cta.bullet2": "Phase 1 Web2 · Phase 2 Superteam-ready",
+  "cta.bullet2": "Dirancang untuk role Admin, Sosmed & Editor",
   "cta.bullet3": "Demo: admin@hezntainment.com / password123",
   "cta.cardTitle": "Buka Hezntainment",
   "cta.cardBody":
-    "Setelah login Anda masuk ke dashboard manajemen konten. Superteam Hub connect menyusul di Phase 2.",
+    "Setelah login Anda masuk ke dashboard manajemen konten — siap ganti brand, SYNC post, dan review KPI.",
   "cta.login": "Masuk ke demo",
 
   "footer.tagline":
@@ -137,7 +137,7 @@ export const id: Record<keyof typeof en, string> = {
   "footer.pricing": "Harga",
   "footer.demo": "Buka demo",
   "footer.trial": "Mulai Trial Gratis",
-  "footer.phase2": "Connect via Superteam Hub — Phase 2",
+  "footer.phase2": "API & integrasi — segera hadir",
   "footer.rights": "Hak cipta dilindungi.",
 
   "lang.en": "EN",
@@ -332,7 +332,7 @@ export const id: Record<keyof typeof en, string> = {
   "team.colStatus": "Status",
   "team.colActive": "Terakhir aktif",
   "team.errEmail": "Masukkan email yang valid.",
-  "team.inviteQueued": "Undangan diantrekan untuk {email} sebagai {role} (stub Phase 1 — sambungkan provider email berikutnya).",
+  "team.inviteQueued": "Undangan diantrekan untuk {email} sebagai {role} (stub demo — sambungkan provider email berikutnya).",
   "team.bulkPaste": "Tempel satu email per baris (atau dipisah koma).",
   "team.bulkQueued": "{n} undangan diantrekan sebagai {role}. Sisa seat: {seats}.",
 

@@ -8,7 +8,7 @@ import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 const audiences: { titleKey: TranslationKey; bodyKey: TranslationKey }[] = [
   { titleKey: "audiences.agency.title", bodyKey: "audiences.agency.body" },
-  { titleKey: "audiences.web3.title", bodyKey: "audiences.web3.body" },
+  { titleKey: "audiences.brands.title", bodyKey: "audiences.brands.body" },
   { titleKey: "audiences.sosmed.title", bodyKey: "audiences.sosmed.body" },
   { titleKey: "audiences.editors.title", bodyKey: "audiences.editors.body" },
 ];

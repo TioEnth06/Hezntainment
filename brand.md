@@ -4,7 +4,7 @@ Status: active
 Reference: [Curated.Media](https://www.curated.media) — dark programmatic / SST aesthetic adapted for ContentOps SaaS.
 
 ## Product
-**Hezntainment** — multi-brand manajemen konten, Monitor Data, SYNC engine, and Laporan KPI for social agencies and Web3 teams. (Internal product codename: MNA Content.)
+**Hezntainment** — multi-brand content management, Monitor Data, SYNC engine, and KPI reports for social agencies and in-house brand teams. (Internal product codename: MNA Content.)
 
 ## Palette (Curated.Media-inspired)
 | Token | Hex | Use |
