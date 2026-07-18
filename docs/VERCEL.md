@@ -19,7 +19,7 @@ In **Project → Settings → Environment Variables** (Production + Preview):
 | Name | Required | Example |
 |------|----------|---------|
 | `AUTH_SECRET` | Yes | output of `openssl rand -base64 32` |
-| `AUTH_URL` | Yes | `https://your-app.vercel.app` |
+| `AUTH_URL` | Yes* | `https://hezntainment-dpak.vercel.app` (must include `https://`) |
 | `DATABASE_URL` | Optional* | Neon / Vercel Postgres URL |
 | `AUTH_GOOGLE_ID` | No | Google OAuth client id |
 | `AUTH_GOOGLE_SECRET` | No | Google OAuth client secret |
@@ -65,21 +65,31 @@ Click **Deploy**. Landing + demo login should work immediately with `AUTH_SECRET
 
 ## Troubleshooting
 
-### `/login` shows **Internal Server Error** or blank page after login
+### `/login` shows **Internal Server Error**, blank page after login, or browser **HTTP ERROR 500**
 
-Almost always **missing / wrong `AUTH_SECRET`** (or `AUTH_URL`) in Vercel.
+Almost always **missing `AUTH_SECRET`** or **invalid `AUTH_URL`**.
 
 Live check: open `https://YOUR-APP.vercel.app/api/health/auth`  
-→ must return `"ok": true`. If `503` / `authSecretConfigured: false`, env is not applied.
+→ must return `"ok": true` and a real `authUrlHost` (not `"invalid"`).
 
 1. Vercel → Project → **Settings → Environment Variables**
-2. Add (Production + Preview):
+2. Set (Production + Preview):
    - `AUTH_SECRET` = output of `openssl rand -base64 32`
-   - `AUTH_URL` = exact live origin, e.g. `https://hezntainment.vercel.app` (no trailing slash)
-3. **Deployments → … → Redeploy** (required — new env alone is not enough)
-4. Hard-refresh `/login`, then try demo login again
+   - `AUTH_URL` = **exact** origin with protocol, e.g.  
+     `https://hezntainment-dpak.vercel.app`  
+     **Must** start with `https://`. No quotes. No path. No trailing slash.
+3. **Deployments → … → Redeploy**
+4. Hard-refresh, then try demo login again
 
-Confirm in **Deployments → Runtime Logs** — look for `MissingSecret` / `Please define a secret`.
+Common `AUTH_URL` mistakes that cause `/api/auth/*` 500:
+
+| Wrong | Right |
+|-------|--------|
+| `hezntainment-dpak.vercel.app` | `https://hezntainment-dpak.vercel.app` |
+| `"https://….vercel.app"` (with quotes) | `https://….vercel.app` |
+| `https://….vercel.app/` | `https://….vercel.app` |
+
+Confirm in **Deployments → Runtime Logs** — look for `MissingSecret` / URL parse errors.
 
 Demo accounts (no database required):
 

@@ -2,8 +2,12 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import { compare } from "bcryptjs";
+import { normalizeAuthEnv } from "@/lib/auth-env";
 import { DEMO_USERS, DEMO_WORKSPACE } from "@/lib/mock/auth-users";
 import type { AppRole } from "@/lib/rbac";
+
+// Must run before NextAuth() — invalid AUTH_URL causes /api/auth/* HTTP 500 on Vercel.
+normalizeAuthEnv();
 
 const googleConfigured =
   Boolean(process.env.AUTH_GOOGLE_ID) && Boolean(process.env.AUTH_GOOGLE_SECRET);
