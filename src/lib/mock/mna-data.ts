@@ -1,12 +1,14 @@
 import type {
   EditorKpi,
+  KanbanTask,
+  LinkTrackerRow,
   MonitorContentRow,
   SpecialistKpi,
   WorkspaceBrand,
 } from "@/lib/workspace/types";
 
 export const MNA_WORKSPACES: WorkspaceBrand[] = [
-  { id: "ws_jeparanesia", name: "Jeparanesia", slug: "jeparanesia", brandCode: "JPR" },
+  { id: "ws_nhmonline", name: "NHM Online", slug: "nhmonline", brandCode: "NHM" },
   { id: "ws_siinbooth", name: "Siinbooth", slug: "siinbooth", brandCode: "SNB" },
 ];
 
@@ -14,38 +16,38 @@ const empty = { views: 0, likes: 0, comments: 0, shares: 0 };
 
 export const MNA_MONITOR_ROWS: MonitorContentRow[] = [
   {
-    id: "c_jpr_1",
-    workspaceId: "ws_jeparanesia",
-    title: "Jepara Heritage Reel — Teak Craft",
-    brand: "Jeparanesia",
+    id: "c_nhm_1",
+    workspaceId: "ws_nhmonline",
+    title: "NHM Online — Product highlight reel",
+    brand: "NHM Online",
     status: "PUBLISHED",
     uploadDate: "2026-07-02",
     lastSynced: "2026-07-18T02:10:00.000Z",
-    publishedUrl: "https://www.tiktok.com/@jeparanesia/video/demo1",
+    publishedUrl: "https://www.tiktok.com/@nhmonline/video/demo1",
     tiktok: { views: 84200, likes: 6100, comments: 312, shares: 890 },
     instagram: { views: 22100, likes: 1840, comments: 96, shares: 140 },
   },
   {
-    id: "c_jpr_2",
-    workspaceId: "ws_jeparanesia",
-    title: "Workshop Tour — Behind the Carving",
-    brand: "Jeparanesia",
+    id: "c_nhm_2",
+    workspaceId: "ws_nhmonline",
+    title: "Website walkthrough — nhmonline.com",
+    brand: "NHM Online",
     status: "PUBLISHED",
     uploadDate: "2026-07-08",
     lastSynced: "2026-07-17T18:40:00.000Z",
-    publishedUrl: "https://www.instagram.com/p/jepara-demo",
+    publishedUrl: "https://www.instagram.com/p/nhmonline-demo",
     tiktok: { views: 15600, likes: 920, comments: 44, shares: 71 },
     instagram: { views: 38900, likes: 3200, comments: 188, shares: 260 },
   },
   {
-    id: "c_jpr_3",
-    workspaceId: "ws_jeparanesia",
-    title: "Buyer FAQ — Export Ready Furniture",
-    brand: "Jeparanesia",
+    id: "c_nhm_3",
+    workspaceId: "ws_nhmonline",
+    title: "FAQ — How to order via NHM Online",
+    brand: "NHM Online",
     status: "PUBLISHED",
     uploadDate: "2026-07-14",
     lastSynced: null,
-    publishedUrl: "https://www.tiktok.com/@jeparanesia/video/demo3",
+    publishedUrl: "https://www.tiktok.com/@nhmonline/video/demo3",
     tiktok: { ...empty },
     instagram: null,
   },
@@ -88,7 +90,7 @@ export const MNA_MONITOR_ROWS: MonitorContentRow[] = [
 ];
 
 export const MNA_SPECIALIST_KPI: Record<string, SpecialistKpi[]> = {
-  ws_jeparanesia: [
+  ws_nhmonline: [
     {
       userId: "user_sosmed",
       name: "Sinta Sosmed",
@@ -128,7 +130,7 @@ export const MNA_SPECIALIST_KPI: Record<string, SpecialistKpi[]> = {
 };
 
 export const MNA_EDITOR_KPI: Record<string, EditorKpi[]> = {
-  ws_jeparanesia: [
+  ws_nhmonline: [
     {
       userId: "user_editor",
       name: "Eko Editor",
@@ -170,6 +172,171 @@ export const MNA_EDITOR_KPI: Record<string, EditorKpi[]> = {
   ],
 };
 
+export const MNA_KANBAN_TASKS: KanbanTask[] = [
+  {
+    id: "k_nhm_1",
+    workspaceId: "ws_nhmonline",
+    title: "Homepage promo series ideas",
+    brand: "NHM Online",
+    brandCode: "NHM",
+    status: "IDEATION",
+    assigneeName: "Sinta Sosmed",
+    assigneeRole: "SOSMED",
+    assetStatus: "MISSING",
+    caption: "Hook ideas driving traffic to nhmonline.com",
+  },
+  {
+    id: "k_nhm_2",
+    workspaceId: "ws_nhmonline",
+    title: "New arrival — 30s script",
+    brand: "NHM Online",
+    brandCode: "NHM",
+    status: "SCRIPTING",
+    assigneeName: "Sinta Sosmed",
+    assigneeRole: "SOSMED",
+    assetStatus: "DRAFT",
+  },
+  {
+    id: "k_nhm_3",
+    workspaceId: "ws_nhmonline",
+    title: "Site feature cutdown",
+    brand: "NHM Online",
+    brandCode: "NHM",
+    status: "EDITING",
+    assigneeName: "Eko Editor",
+    assigneeRole: "EDITOR",
+    assetStatus: "READY",
+  },
+  {
+    id: "k_nhm_4",
+    workspaceId: "ws_nhmonline",
+    title: "Order FAQ reel — final polish",
+    brand: "NHM Online",
+    brandCode: "NHM",
+    status: "READY_TO_REVIEW",
+    assigneeName: "Maya Cut",
+    assigneeRole: "EDITOR",
+    assetStatus: "UPLOADED",
+  },
+  {
+    id: "k_nhm_5",
+    workspaceId: "ws_nhmonline",
+    title: "Flash sale story pack",
+    brand: "NHM Online",
+    brandCode: "NHM",
+    status: "EDITING",
+    assigneeName: "Maya Cut",
+    assigneeRole: "EDITOR",
+    assetStatus: "DRAFT",
+  },
+  {
+    id: "k_snb_1",
+    workspaceId: "ws_siinbooth",
+    title: "Booth pack-down ASMR",
+    brand: "Siinbooth",
+    brandCode: "SNB",
+    status: "IDEATION",
+    assigneeName: "Nina Post",
+    assigneeRole: "SOSMED",
+    assetStatus: "MISSING",
+  },
+  {
+    id: "k_snb_2",
+    workspaceId: "ws_siinbooth",
+    title: "Lighting kit checklist script",
+    brand: "Siinbooth",
+    brandCode: "SNB",
+    status: "SCRIPTING",
+    assigneeName: "Sinta Sosmed",
+    assigneeRole: "SOSMED",
+    assetStatus: "DRAFT",
+  },
+  {
+    id: "k_snb_3",
+    workspaceId: "ws_siinbooth",
+    title: "Expo Jakarta testimonial edit",
+    brand: "Siinbooth",
+    brandCode: "SNB",
+    status: "EDITING",
+    assigneeName: "Rizky Grade",
+    assigneeRole: "EDITOR",
+    assetStatus: "READY",
+  },
+  {
+    id: "k_snb_4",
+    workspaceId: "ws_siinbooth",
+    title: "Setup in 60s — review cut",
+    brand: "Siinbooth",
+    brandCode: "SNB",
+    status: "READY_TO_REVIEW",
+    assigneeName: "Eko Editor",
+    assigneeRole: "EDITOR",
+    assetStatus: "UPLOADED",
+  },
+  {
+    id: "k_snb_5",
+    workspaceId: "ws_siinbooth",
+    title: "Client logo wall B-roll",
+    brand: "Siinbooth",
+    brandCode: "SNB",
+    status: "IDEATION",
+    assigneeName: "Sinta Sosmed",
+    assigneeRole: "SOSMED",
+    assetStatus: "MISSING",
+  },
+];
+
+export const MNA_LINK_TRACKERS: LinkTrackerRow[] = [
+  {
+    id: "lt_nhm_1",
+    workspaceId: "ws_nhmonline",
+    label: "NHM Online website",
+    url: "https://nhmonline.com",
+    clicks: 1284,
+    lastClicked: "2026-07-17T14:20:00.000Z",
+  },
+  {
+    id: "lt_nhm_2",
+    workspaceId: "ws_nhmonline",
+    label: "Shop / catalog",
+    url: "https://nhmonline.com",
+    clicks: 420,
+    lastClicked: "2026-07-18T08:05:00.000Z",
+  },
+  {
+    id: "lt_nhm_3",
+    workspaceId: "ws_nhmonline",
+    label: "WhatsApp Sales",
+    url: "https://wa.me/6281234567890",
+    clicks: 96,
+    lastClicked: "2026-07-16T11:40:00.000Z",
+  },
+  {
+    id: "lt_snb_1",
+    workspaceId: "ws_siinbooth",
+    label: "Siinbooth Bio Link",
+    url: "https://siinbooth.com",
+    clicks: 892,
+    lastClicked: "2026-07-18T09:12:00.000Z",
+  },
+  {
+    id: "lt_snb_2",
+    workspaceId: "ws_siinbooth",
+    label: "Booking form",
+    url: "https://siinbooth.com/book",
+    clicks: 310,
+    lastClicked: "2026-07-17T16:30:00.000Z",
+  },
+  {
+    id: "lt_snb_3",
+    workspaceId: "ws_siinbooth",
+    label: "Promo landing",
+    url: "https://siinbooth.com/promo",
+    clicks: 154,
+    lastClicked: null,
+  },
+];
+
 export function aggregateMonitor(rows: MonitorContentRow[]) {
   return rows.reduce(
     (acc, row) => {
@@ -190,14 +357,44 @@ export function kpiStatus(
   achieved: number,
   target: number,
   kind: "specialist" | "editor",
-): { label: string; tone: "danger" | "warn" | "ok" } {
+): {
+  code: "behind" | "onTrack" | "slowStart" | "catchingUp";
+  tone: "danger" | "warn" | "ok";
+} {
   const pct = target === 0 ? 0 : (achieved / target) * 100;
   if (kind === "specialist") {
-    if (pct < 40) return { label: "BEHIND", tone: "danger" };
-    if (pct < 80) return { label: "CATCHING UP", tone: "warn" };
-    return { label: "ON TRACK", tone: "ok" };
+    if (pct < 80) return { code: "behind", tone: pct < 40 ? "danger" : "warn" };
+    return { code: "onTrack", tone: "ok" };
   }
-  if (pct < 25) return { label: "SLOW START", tone: "warn" };
-  if (pct < 70) return { label: "CATCHING UP", tone: "warn" };
-  return { label: "ON TRACK", tone: "ok" };
+  if (pct < 25) return { code: "slowStart", tone: "warn" };
+  if (pct < 70) return { code: "catchingUp", tone: "warn" };
+  return { code: "onTrack", tone: "ok" };
+}
+
+/** July = baseline mock; January = earlier-month pace (~55%). */
+export function scaleKpiForMonth<T extends SpecialistKpi | EditorKpi>(
+  rows: T[],
+  month: string,
+): T[] {
+  if (month === "2026-07") return rows;
+  const factor = month === "2026-01" ? 0.55 : 1;
+  return rows.map((row) => {
+    if (row.role === "SOSMED") {
+      const specialist = row as SpecialistKpi;
+      const achieved = Math.max(0, Math.round(specialist.achieved * factor));
+      return {
+        ...specialist,
+        achieved,
+        draft: Math.max(0, Math.round(specialist.draft * factor)),
+        proses: Math.max(0, Math.round(specialist.proses * factor)),
+        done: achieved,
+      } as T;
+    }
+    const editor = row as EditorKpi;
+    return {
+      ...editor,
+      achieved: Math.max(0, Math.round(editor.achieved * factor)),
+      openWorkload: Math.max(0, Math.round(editor.openWorkload * (2 - factor))),
+    } as T;
+  });
 }

@@ -114,6 +114,20 @@ CREATE TABLE "brand_inventory" (
   "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE "link_trackers" (
+  "id" TEXT PRIMARY KEY,
+  "workspace_id" TEXT NOT NULL REFERENCES "workspaces"("id") ON DELETE CASCADE,
+  "label" TEXT NOT NULL,
+  "url" TEXT NOT NULL,
+  "clicks" INTEGER NOT NULL DEFAULT 0,
+  "last_clicked" TIMESTAMP(3),
+  "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" TIMESTAMP(3) NOT NULL
+);
+
+CREATE INDEX "link_trackers_workspace_id_idx"
+  ON "link_trackers" ("workspace_id");
+
 -- Seed roles
 INSERT INTO "roles" ("id", "role_name", "description") VALUES
   ('role_admin', 'ADMIN', 'Full workspace administration'),

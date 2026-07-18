@@ -1,30 +1,34 @@
 # Hezntainment Brand
 
 Status: active  
-Reference: [The Rescue Media](https://therescuemedia.com) — cinematic production aesthetic adapted for ContentOps SaaS.
+Reference: [Curated.Media](https://www.curated.media) — dark programmatic / SST aesthetic adapted for ContentOps SaaS.
 
 ## Product
 **Hezntainment** — multi-brand manajemen konten, Monitor Data, SYNC engine, and Laporan KPI for social agencies and Web3 teams. (Internal product codename: MNA Content.)
 
-## Palette (Rescue-inspired)
+## Palette (Curated.Media-inspired)
 | Token | Hex | Use |
 | --- | --- | --- |
-| Ink | `#222020` | Near-black text & dark sections |
-| Primary | `#1C475A` | Deep teal — secondary surfaces, trust |
-| Accent | `#7E5189` | Mauve CTA / links (Rescue global accent) |
-| Warm | `#FFBC7D` | Highlight / secondary CTA / page energy |
-| Forest | `#1A4015` | Rare depth accents |
-| Surface | `#F3F2F2` | Light section backgrounds |
-| Panel | `#FFFFFF` | Elevated content |
-| Muted | `#6B6560` | Supporting copy |
-| Line | `#E4E1DE` | Borders on light surfaces |
+| Ink / Chrome | `#000000` | Hero overlays, sidebar chrome, absolute black |
+| Surface | `#070912` | Page background |
+| Panel | `#161b42` | Cards, elevated panels |
+| Panel Soft | `#282b42` | Secondary elevated surfaces |
+| Foreground | `#eaecff` | Primary text on dark |
+| Primary | `#666cff` | Main CTA / links / active states |
+| Accent | `#8c52ff` | Secondary purple energy |
+| Warm | `#b8baff` | Lavender highlight / soft emphasis |
+| Muted | `#9b9db8` | Supporting copy |
+| Line | `#2a2e4d` | Borders / dividers |
 
 ## Typography
-- **Display / UI:** Poppins (Rescue Media stack)
-- **Numbers:** JetBrains Mono
+- **UI / Display:** Inter (Curated.Media stack)
+- **Numbers / mono:** Fira Code
 
 ## Voice
-Confident studio energy, operational clarity. Speak like a production house that also ships software — direct, premium, mission-led.
+Precise, self-serve, operator-confident. Short claims, strong CTAs (“Get started — it’s free”), no cinematic fluff.
 
 ## Motion
-Cinematic fades, staggered section reveals, hover lifts on service panels. No neon glow.
+Boot splash (init lines + spinning rings), infinite marquee roll, floating indigo/purple orbs, hero parallax fade, staggered section reveals, spring hover lifts, accordion height morphs. Honors `prefers-reduced-motion`.
+
+## Shape
+Slightly rounded controls (`rounded-lg` / `rounded-full` CTAs), high-contrast dark shells, lavender active chips.

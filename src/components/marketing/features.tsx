@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   BarChart3,
   CalendarDays,
@@ -10,66 +10,82 @@ import {
   Users,
 } from "lucide-react";
 import { Eyebrow, Section, SectionTitle } from "@/components/marketing/section";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { fadeUp, springSoft, staggerContainer, viewportOnce } from "@/lib/motion";
 
-const services = [
+const services: {
+  icon: typeof CalendarDays;
+  titleKey: TranslationKey;
+  bodyKey: TranslationKey;
+}[] = [
   {
     icon: CalendarDays,
-    title: "Kalender Editorial",
-    body: "Timeline konten per workspace — Ideation sampai Published, filtered by active brand.",
+    titleKey: "features.kalender.title",
+    bodyKey: "features.kalender.body",
   },
   {
     icon: Radio,
-    title: "Monitor Data",
-    body: "Summary cards + tabel metrics TikTok & Instagram. Last synced timestamp di setiap baris.",
+    titleKey: "features.monitor.title",
+    bodyKey: "features.monitor.body",
   },
   {
     icon: RefreshCw,
-    title: "SYNC Engine",
-    body: "Tombol SYNC per URL atau SYNC ALL. Queue backend menghindari rate-limit saat banyak link.",
+    titleKey: "features.sync.title",
+    bodyKey: "features.sync.body",
   },
   {
     icon: BarChart3,
-    title: "Laporan KPI",
-    body: "Sosmed: Create Scripts (DRAFT/PROSES/DONE). Editor: Finish Videos + workload indicator.",
+    titleKey: "features.kpi.title",
+    bodyKey: "features.kpi.body",
   },
   {
     icon: Users,
-    title: "Manajemen Tim (RBAC)",
-    body: "Admin, Sosmed, Editor. Bulk invite untuk agency berkursi banyak — staff tidak melihat billing.",
+    titleKey: "features.team.title",
+    bodyKey: "features.team.body",
   },
   {
     icon: Link2,
-    title: "Link Click Tracker",
-    body: "Lacak outbound / bio links per brand workspace (Phase 1 stub, siap di-wire setelah sync stabil).",
+    titleKey: "features.links.title",
+    bodyKey: "features.links.body",
   },
 ];
 
 export function Features() {
+  const reduce = useReducedMotion();
+  const { t } = useI18n();
+
   return (
     <Section id="services" tone="panel">
-      <Eyebrow>Core modules</Eyebrow>
-      <SectionTitle>
-        Menu yang dipakai agency setiap hari — sudah di satu shell.
-      </SectionTitle>
-      <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((service, i) => (
+      <Eyebrow>{t("features.eyebrow")}</Eyebrow>
+      <SectionTitle>{t("features.title")}</SectionTitle>
+      <motion.div
+        className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+        variants={reduce ? undefined : staggerContainer}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "show"}
+        viewport={viewportOnce}
+      >
+        {services.map((service) => (
           <motion.article
-            key={service.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="group border-t border-line pt-6"
+            key={service.titleKey}
+            variants={fadeUp}
+            whileHover={reduce ? undefined : { y: -6 }}
+            transition={springSoft}
+            className="group rounded-xl border border-transparent border-t border-t-line pt-6 transition hover:border-primary/25 hover:bg-white/[0.03] hover:px-4 hover:pb-4"
           >
-            <service.icon className="size-7 text-primary transition group-hover:text-accent" />
-            <h3 className="mt-4 text-xl font-bold text-ink">{service.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted">{service.body}</p>
+            <service.icon className="size-7 text-primary transition duration-300 group-hover:rotate-6 group-hover:text-accent" />
+            <h3 className="mt-4 text-xl font-bold text-foreground">
+              {t(service.titleKey)}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              {t(service.bodyKey)}
+            </p>
             <span className="mt-4 inline-block text-sm font-semibold text-accent transition group-hover:text-primary">
-              Included in Phase 1
+              {t("features.included")}
             </span>
           </motion.article>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

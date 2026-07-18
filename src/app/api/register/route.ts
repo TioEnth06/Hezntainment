@@ -57,7 +57,7 @@ export async function POST(request: Request) {
         name: `${parsed.data.name}'s Workspace`,
         slug,
         brandCode: "NEW",
-        createdBy: user.id,
+        createdById: user.id,
         members: {
           create: {
             userId: user.id,

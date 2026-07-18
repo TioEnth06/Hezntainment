@@ -1,7 +1,7 @@
-import { LaporanKpiView } from "@/components/mna/kpi/laporan-kpi-view";
+import { KPIReport } from "@/components/KPIReport";
 
 export const metadata = { title: "Laporan KPI · MNA Content" };
 
 export default function LaporanKpiPage() {
-  return <LaporanKpiView />;
+  return <KPIReport />;
 }

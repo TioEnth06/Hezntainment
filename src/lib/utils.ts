@@ -15,3 +15,13 @@ export function formatNumber(value: number) {
 export function formatPercent(value: number) {
   return `${value.toFixed(1)}%`;
 }
+
+/** Escape untrusted strings before interpolating into HTML. */
+export function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}

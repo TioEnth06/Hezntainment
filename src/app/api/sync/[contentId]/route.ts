@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { MNA_MONITOR_ROWS } from "@/lib/mock/mna-data";
-import { mockScrapeMetrics } from "@/lib/scraping/sync-metrics";
+import { runContentSync } from "@/lib/scraping/run-sync";
 
 type Params = { params: Promise<{ contentId: string }> };
 
@@ -37,13 +37,13 @@ export async function POST(request: Request, { params }: Params) {
   }
 
   await new Promise((r) => setTimeout(r, 450));
-  const metrics = mockScrapeMetrics(row.publishedUrl);
+  const result = runContentSync(contentId, row.publishedUrl);
+  if (!result) {
+    return NextResponse.json({ error: "Content not found" }, { status: 404 });
+  }
 
-  // Future: prisma.scrapeJob.create + worker + content_metrics upsert
   return NextResponse.json({
-    contentId,
+    ...result,
     jobStatus: "DONE",
-    lastSynced: new Date().toISOString(),
-    metrics,
   });
 }

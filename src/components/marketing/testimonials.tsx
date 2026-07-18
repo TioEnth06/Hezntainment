@@ -1,57 +1,68 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Eyebrow, Section, SectionTitle } from "@/components/marketing/section";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { fadeUp, springSoft, staggerContainer, viewportOnce } from "@/lib/motion";
 
-const quotes = [
+const QUOTES: {
+  quoteKey: TranslationKey;
+  roleKey: TranslationKey;
+  name: string;
+}[] = [
   {
-    quote:
-      "SYNC ALL di Monitor Data menggantikan buka TikTok/IG satu-satu. Client review jadi soal buka Laporan KPI, bukan screenshot malam-malam.",
+    quoteKey: "testimonials.q1",
+    roleKey: "testimonials.q1.role",
     name: "Sinta R.",
-    role: "Sosmed Lead, multi-brand agency",
   },
   {
-    quote:
-      "Switch workspace Jeparanesia ke Siinbooth dan seluruh tabel metrics ikut bersih. Itu yang kami butuhkan untuk tim 20+ seat.",
+    quoteKey: "testimonials.q2",
+    roleKey: "testimonials.q2.role",
     name: "Prasetio W.",
-    role: "Agency Admin",
   },
   {
-    quote:
-      "Editor cuma lihat workload & Finish Videos. Admin pegang seats. Role-nya benar-benar terpisah — bukan satu dashboard untuk semua.",
+    quoteKey: "testimonials.q3",
+    roleKey: "testimonials.q3.role",
     name: "Eko M.",
-    role: "Video Editor",
   },
 ];
 
 export function Testimonials() {
+  const reduce = useReducedMotion();
+  const { t } = useI18n();
+
   return (
     <Section tone="surface">
-      <Eyebrow>What Teams Are Saying</Eyebrow>
-      <SectionTitle>Dari lantai produksi, bukan pitch slide.</SectionTitle>
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {quotes.map((item, i) => (
+      <Eyebrow>{t("testimonials.eyebrow")}</Eyebrow>
+      <SectionTitle>{t("testimonials.title")}</SectionTitle>
+      <motion.div
+        className="mt-12 grid gap-6 md:grid-cols-3"
+        variants={reduce ? undefined : staggerContainer}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "show"}
+        viewport={viewportOnce}
+      >
+        {QUOTES.map((item) => (
           <motion.blockquote
             key={item.name}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.07 }}
-            className="flex flex-col bg-panel p-6 shadow-sm ring-1 ring-line"
+            variants={fadeUp}
+            whileHover={reduce ? undefined : { y: -8, scale: 1.01 }}
+            transition={springSoft}
+            className="flex flex-col rounded-2xl bg-panel p-6 shadow-sm ring-1 ring-line transition hover:ring-primary/40 hover:shadow-lg hover:shadow-primary/10"
           >
             <p className="text-warm" aria-hidden>
               ★ ★ ★ ★ ★
             </p>
-            <p className="mt-4 flex-1 text-sm leading-relaxed text-ink/90">
-              “{item.quote}”
+            <p className="mt-4 flex-1 text-sm leading-relaxed text-foreground/90">
+              “{t(item.quoteKey)}”
             </p>
             <footer className="mt-6 border-t border-line pt-4">
-              <p className="text-sm font-bold text-ink">{item.name}</p>
-              <p className="text-xs text-muted">{item.role}</p>
+              <p className="text-sm font-bold text-foreground">{item.name}</p>
+              <p className="text-xs text-muted">{t(item.roleKey)}</p>
             </footer>
           </motion.blockquote>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

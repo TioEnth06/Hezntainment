@@ -127,20 +127,21 @@ model UserRole {
 }
 
 model Workspace {
-  id        String   @id @default(cuid())
-  name      String
-  slug      String   @unique
-  brandCode String?  @map("brand_code")
-  createdBy String   @map("created_by")
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  brandCode   String?  @map("brand_code")
+  createdById String   @map("created_by")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
 
-  creator    User              @relation("WorkspaceCreator", fields: [createdBy], references: [id])
-  members    WorkspaceMember[]
-  contents   Content[]
-  scrapeJobs ScrapeJob[]
-  kpiTargets KpiTarget[]
-  brands     BrandInventory[]
+  creator     User              @relation("WorkspaceCreator", fields: [createdById], references: [id])
+  members     WorkspaceMember[]
+  contents    Content[]
+  scrapeJobs  ScrapeJob[]
+  kpiTargets  KpiTarget[]
+  brands      BrandInventory[]
+  linkTrackers LinkTracker[]
 
   @@map("workspaces")
 }
@@ -250,4 +251,21 @@ model BrandInventory {
   workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 
   @@map("brand_inventory")
+}
+
+/// Outbound / bio link click tracker per workspace
+model LinkTracker {
+  id          String    @id @default(cuid())
+  workspaceId String    @map("workspace_id")
+  label       String
+  url         String
+  clicks      Int       @default(0)
+  lastClicked DateTime? @map("last_clicked")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("link_trackers")
 }

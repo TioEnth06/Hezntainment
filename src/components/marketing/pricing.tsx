@@ -1,51 +1,72 @@
-import Link from "next/link";
-import { Eyebrow, Section, SectionTitle } from "@/components/marketing/section";
+"use client";
 
-const plans = [
+import Link from "next/link";
+import { motion, useReducedMotion } from "framer-motion";
+import { Eyebrow, Section, SectionTitle } from "@/components/marketing/section";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { fadeUp, springSoft, staggerContainer, viewportOnce } from "@/lib/motion";
+
+const plans: {
+  name: string;
+  price: string;
+  blurbKey: TranslationKey;
+  featureKeys: TranslationKey[];
+  featured: boolean;
+}[] = [
   {
     name: "Creator",
     price: "$29",
-    blurb: "Solo / small pod — satu brand workspace.",
-    features: [
-      "1 workspace",
-      "Up to 5 seats",
-      "Kalender + Monitor Data",
-      "SYNC queue (TikTok / IG / YT)",
-      "Laporan KPI CSV",
+    blurbKey: "pricing.creator.blurb",
+    featureKeys: [
+      "pricing.creator.f1",
+      "pricing.creator.f2",
+      "pricing.creator.f3",
+      "pricing.creator.f4",
+      "pricing.creator.f5",
     ],
     featured: false,
   },
   {
     name: "Agency",
     price: "$99",
-    blurb: "Multi-brand agencies & Web3 project teams.",
-    features: [
-      "Unlimited workspaces*",
-      "Up to 25 seats + bulk invite",
-      "RBAC: Admin / Sosmed / Editor",
-      "Monitor Data + PRINT KPI report",
-      "Priority SYNC queue",
-      "Superteam Hub connect (Phase 2)",
+    blurbKey: "pricing.agency.blurb",
+    featureKeys: [
+      "pricing.agency.f1",
+      "pricing.agency.f2",
+      "pricing.agency.f3",
+      "pricing.agency.f4",
+      "pricing.agency.f5",
+      "pricing.agency.f6",
     ],
     featured: true,
   },
 ];
 
 export function Pricing() {
+  const reduce = useReducedMotion();
+  const { t } = useI18n();
+
   return (
     <Section id="pricing" tone="panel">
-      <Eyebrow>Pricing</Eyebrow>
-      <SectionTitle>
-        Harga sederhana. Scale seats & brand, bukan spreadsheet.
-      </SectionTitle>
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <Eyebrow>{t("pricing.eyebrow")}</Eyebrow>
+      <SectionTitle>{t("pricing.title")}</SectionTitle>
+      <motion.div
+        className="mt-12 grid gap-6 md:grid-cols-2"
+        variants={reduce ? undefined : staggerContainer}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "show"}
+        viewport={viewportOnce}
+      >
         {plans.map((plan) => (
-          <article
+          <motion.article
             key={plan.name}
-            className={`p-8 ring-1 ${
+            variants={fadeUp}
+            whileHover={reduce ? undefined : { y: -8, scale: 1.01 }}
+            transition={springSoft}
+            className={`rounded-2xl p-8 ring-1 ${
               plan.featured
-                ? "bg-ink text-white ring-ink"
-                : "bg-surface text-ink ring-line"
+                ? "bg-gradient-to-br from-panel to-ink text-white ring-primary/40 shadow-xl shadow-primary/20"
+                : "bg-surface text-foreground ring-line"
             }`}
           >
             <div className="flex items-baseline justify-between gap-4">
@@ -57,7 +78,7 @@ export function Pricing() {
                     plan.featured ? "text-white/55" : "text-muted"
                   }`}
                 >
-                  /mo
+                  {t("pricing.perMonth")}
                 </span>
               </p>
             </div>
@@ -66,30 +87,30 @@ export function Pricing() {
                 plan.featured ? "text-white/65" : "text-muted"
               }`}
             >
-              {plan.blurb}
+              {t(plan.blurbKey)}
             </p>
             <ul className="mt-7 space-y-2.5 text-sm">
-              {plan.features.map((f) => (
-                <li key={f} className="flex gap-2">
+              {plan.featureKeys.map((key) => (
+                <li key={key} className="flex gap-2">
                   <span className={plan.featured ? "text-warm" : "text-accent"}>
                     ▸
                   </span>
-                  {f}
+                  {t(key)}
                 </li>
               ))}
             </ul>
             <Link
               href="/register"
-              className={`mt-8 inline-flex w-full items-center justify-center rounded-sm px-4 py-3.5 text-sm font-bold tracking-wide ${
+              className={`mt-8 inline-flex w-full items-center justify-center px-4 py-3.5 text-sm font-bold tracking-wide ${
                 plan.featured ? "btn-warm" : "btn-primary"
               }`}
             >
-              Start Free Trial
+              {t("pricing.cta")}
             </Link>
-          </article>
+          </motion.article>
         ))}
-      </div>
-      <p className="mt-4 text-xs text-muted">*Fair-use limits apply during beta.</p>
+      </motion.div>
+      <p className="mt-4 text-xs text-muted">{t("pricing.note")}</p>
     </Section>
   );
 }

@@ -1,9 +1,11 @@
 export type AppRole = "ADMIN" | "SOSMED" | "EDITOR";
 
+export type MnaNavSection = "utama" | "produksi" | "admin";
+
 export type MnaNavItem = {
   href: string;
   label: string;
-  section: "utama" | "admin";
+  section: MnaNavSection;
   roles: AppRole[];
 };
 
@@ -53,6 +55,18 @@ export const MNA_NAV: MnaNavItem[] = [
     roles: ["ADMIN", "SOSMED"],
   },
   {
+    href: "/mna/brainstorming",
+    label: "Brainstorming",
+    section: "produksi",
+    roles: ["ADMIN", "SOSMED", "EDITOR"],
+  },
+  {
+    href: "/mna/antrean-produksi",
+    label: "Antrean Produksi",
+    section: "produksi",
+    roles: ["ADMIN", "SOSMED", "EDITOR"],
+  },
+  {
     href: "/mna/administrasi/tim",
     label: "Manajemen Tim",
     section: "admin",
@@ -72,10 +86,20 @@ export const MNA_NAV: MnaNavItem[] = [
   },
 ];
 
-export function canAccessPath(role: AppRole, href: string) {
-  const item = MNA_NAV.find(
-    (n) => href === n.href || href.startsWith(`${n.href}/`),
-  );
+/** Longest-prefix match so nested admin routes don't collide. */
+export function matchNavItem(pathname: string) {
+  return [...MNA_NAV]
+    .filter((n) => pathname === n.href || pathname.startsWith(`${n.href}/`))
+    .sort((a, b) => b.href.length - a.href.length)[0];
+}
+
+export function isNavActive(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+export function canAccessPath(role: AppRole | undefined, pathname: string) {
+  if (!role) return false;
+  const item = matchNavItem(pathname);
   if (!item) return true;
   return item.roles.includes(role);
 }

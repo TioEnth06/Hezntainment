@@ -4,9 +4,11 @@ import { useState } from "react";
 import { getSession, signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 import { homePathForRole } from "@/lib/rbac";
 
 export function LoginForm() {
+  const { t } = useI18n();
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
@@ -26,7 +28,7 @@ export function LoginForm() {
     });
     if (res?.error) {
       setLoading(false);
-      setError("Invalid email or password.");
+      setError(t("auth.invalid"));
       return;
     }
 
@@ -44,8 +46,8 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div>
-        <label htmlFor="email" className="text-sm font-medium text-ink">
-          Email
+        <label htmlFor="email" className="text-sm font-medium text-foreground">
+          {t("auth.email")}
         </label>
         <input
           id="email"
@@ -53,12 +55,12 @@ export function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-1.5 w-full rounded-sm border border-line bg-panel px-3 py-2.5 text-sm outline-none ring-primary focus:ring-2"
+          className="mt-1.5 w-full rounded-lg border border-line bg-panel-soft px-3 py-2.5 text-sm text-foreground outline-none ring-primary/40 focus:ring-2"
         />
       </div>
       <div>
-        <label htmlFor="password" className="text-sm font-medium text-ink">
-          Password
+        <label htmlFor="password" className="text-sm font-medium text-foreground">
+          {t("auth.password")}
         </label>
         <input
           id="password"
@@ -66,25 +68,25 @@ export function LoginForm() {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="mt-1.5 w-full rounded-sm border border-line bg-panel px-3 py-2.5 text-sm outline-none ring-primary focus:ring-2"
+          className="mt-1.5 w-full rounded-lg border border-line bg-panel-soft px-3 py-2.5 text-sm text-foreground outline-none ring-primary/40 focus:ring-2"
         />
       </div>
-      {error ? <p className="text-sm text-red-600">{error}</p> : null}
+      {error ? <p className="text-sm text-red-300">{error}</p> : null}
       <button
         type="submit"
         disabled={loading}
-        className="btn-warm w-full rounded-sm px-4 py-2.5 text-sm font-bold disabled:opacity-60"
+        className="btn-warm w-full px-4 py-2.5 text-sm font-bold disabled:opacity-60"
       >
-        {loading ? "Signing in…" : "Sign in"}
+        {loading ? t("auth.signingIn") : t("auth.signIn")}
       </button>
       <div className="space-y-1 text-center text-xs text-muted">
-        <p>All roles land in MNA Content · workspace switcher in sidebar</p>
-        <p>admin@ / sosmed@ / editor@hezntainment.com · password123</p>
+        <p>{t("auth.demoHint")}</p>
+        <p>{t("auth.demoAccounts")}</p>
       </div>
       <p className="text-center text-sm text-muted">
-        New here?{" "}
-        <Link href="/register" className="font-medium text-accent">
-          Create workspace
+        {t("auth.newHere")}{" "}
+        <Link href="/register" className="font-medium text-primary hover:text-warm">
+          {t("auth.createWorkspace")}
         </Link>
       </p>
     </form>

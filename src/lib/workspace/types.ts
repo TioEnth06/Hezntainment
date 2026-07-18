@@ -14,18 +14,50 @@ export type PlatformStats = {
   shares: number;
 };
 
+export type ContentPipelineStatus =
+  | "IDEATION"
+  | "SCRIPTING"
+  | "EDITING"
+  | "READY_TO_REVIEW"
+  | "PUBLISHED";
+
+export type AssetStatus = "MISSING" | "DRAFT" | "READY" | "UPLOADED";
+
 export type MonitorContentRow = {
   id: string;
   workspaceId: string;
   title: string;
   brand: string;
-  status: "PUBLISHED" | "READY_TO_REVIEW" | "EDITING" | "SCRIPTING" | "IDEATION";
+  status: ContentPipelineStatus;
   uploadDate: string;
   lastSynced: string | null;
+  lastSyncedLabel?: string;
   publishedUrl: string;
   tiktok: PlatformStats | null;
   instagram: PlatformStats | null;
   syncing?: boolean;
+};
+
+export type KanbanTask = {
+  id: string;
+  workspaceId: string;
+  title: string;
+  brand: string;
+  brandCode: string;
+  status: Exclude<ContentPipelineStatus, "PUBLISHED">;
+  assigneeName: string;
+  assigneeRole: "SOSMED" | "EDITOR";
+  assetStatus: AssetStatus;
+  caption?: string;
+};
+
+export type LinkTrackerRow = {
+  id: string;
+  workspaceId: string;
+  label: string;
+  url: string;
+  clicks: number;
+  lastClicked: string | null;
 };
 
 export type SpecialistKpi = {

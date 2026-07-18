@@ -39,6 +39,9 @@ export async function proxy(request: NextRequest) {
 
   if (isMna && session?.user) {
     const role = session.user.role;
+    if (!role) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
 
     if (
       (pathname.startsWith("/mna/administrasi/tim") ||

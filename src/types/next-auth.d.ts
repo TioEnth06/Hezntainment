@@ -12,9 +12,9 @@ declare module "next-auth" {
   }
 
   interface User {
-    role: AppRole;
-    workspaceId: string;
-    workspaceName: string;
+    role?: AppRole;
+    workspaceId?: string;
+    workspaceName?: string;
   }
 }
 

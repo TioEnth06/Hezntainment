@@ -78,7 +78,7 @@ async function main() {
   }
 
   const brands = [
-    { name: "Jeparanesia", slug: "jeparanesia", brandCode: "JPR" },
+    { name: "NHM Online", slug: "nhmonline", brandCode: "NHM" },
     { name: "Siinbooth", slug: "siinbooth", brandCode: "SNB" },
   ];
 
@@ -90,7 +90,7 @@ async function main() {
         name: brand.name,
         slug: brand.slug,
         brandCode: brand.brandCode,
-        createdBy: admin.id,
+        createdById: admin.id,
       },
     });
 
@@ -207,9 +207,33 @@ async function main() {
         year,
       },
     });
+
+    const linkCount = await prisma.linkTracker.count({
+      where: { workspaceId: workspace.id },
+    });
+    if (linkCount === 0) {
+      await prisma.linkTracker.createMany({
+        data: [
+          {
+            workspaceId: workspace.id,
+            label: `${brand.name} Bio Link`,
+            url: `https://${brand.slug}.com`,
+            clicks: brand.slug === "nhmonline" ? 1284 : 892,
+            lastClicked: new Date("2026-07-17T14:20:00.000Z"),
+          },
+          {
+            workspaceId: workspace.id,
+            label: "Campaign landing",
+            url: `https://${brand.slug}.com/promo`,
+            clicks: brand.slug === "nhmonline" ? 420 : 310,
+            lastClicked: new Date("2026-07-18T08:05:00.000Z"),
+          },
+        ],
+      });
+    }
   }
 
-  console.log("Seeded MNA Content workspaces: Jeparanesia, Siinbooth");
+  console.log("Seeded MNA Content workspaces: NHM Online, Siinbooth");
   console.log("Logins: admin@ / sosmed@ / editor@mna.content — password123");
   console.log("(Demo UI also accepts *@hezntainment.com via auth mock)");
 }

@@ -19,7 +19,7 @@ npm run dev
 
 - Landing: [http://localhost:3000](http://localhost:3000)
 - App: `/mna/dashboard` (after login)
-- Switch brands in sidebar: **Jeparanesia** ↔ **Siinbooth**
+- Switch brands in sidebar: **NHM Online** ↔ **Siinbooth**
 
 ## PostgreSQL (optional)
 

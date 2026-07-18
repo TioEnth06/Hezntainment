@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
-import { MnaSidebar } from "@/components/mna/sidebar";
+import { Sidebar } from "@/components/Sidebar";
 import { WorkspaceProvider } from "@/lib/workspace/context";
 
 export default async function MnaLayout({
@@ -14,11 +14,12 @@ export default async function MnaLayout({
   return (
     <WorkspaceProvider>
       <div className="app-shell-bg flex min-h-screen flex-col md:flex-row">
-        <MnaSidebar
+        {/* Mobile: top bar first. Desktop: right rail via order-2 */}
+        <Sidebar
           role={session.user.role}
           userName={session.user.name ?? session.user.email ?? "User"}
         />
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="order-2 flex min-w-0 flex-1 flex-col md:order-1">
           <main className="flex-1 px-4 py-6 md:px-8">{children}</main>
         </div>
       </div>

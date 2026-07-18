@@ -15,8 +15,8 @@ export function Section({
   fullBleed?: boolean;
 }) {
   const tones = {
-    surface: "bg-surface text-ink",
-    panel: "bg-panel text-ink",
+    surface: "bg-surface text-foreground",
+    panel: "bg-panel text-foreground",
     ink: "bg-ink text-white",
     primary: "bg-primary text-white",
     transparent: "",
@@ -44,7 +44,7 @@ export function Eyebrow({
     <p
       className={cn(
         "text-xs font-bold uppercase tracking-[0.22em]",
-        light ? "text-warm" : "text-accent",
+        light ? "text-warm" : "text-primary",
       )}
     >
       {children}
@@ -65,7 +65,7 @@ export function SectionTitle({
     <h2
       className={cn(
         "mt-3 max-w-3xl text-3xl font-bold tracking-tight md:text-5xl md:leading-[1.1]",
-        light ? "text-white" : "text-ink",
+        light ? "text-white" : "text-foreground",
         className,
       )}
     >

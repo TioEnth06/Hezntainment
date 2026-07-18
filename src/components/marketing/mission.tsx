@@ -1,37 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Eyebrow, Section } from "@/components/marketing/section";
+import { AmbientOrbs } from "@/components/marketing/motion";
+import { useI18n } from "@/lib/i18n";
+import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 
 export function Mission() {
+  const reduce = useReducedMotion();
+  const { t } = useI18n();
+
   return (
-    <Section id="mission" tone="ink">
-      <div className="mx-auto max-w-4xl text-center">
-        <Eyebrow light>Our Mission</Eyebrow>
+    <Section id="mission" tone="ink" className="relative overflow-hidden">
+      <AmbientOrbs />
+      <motion.div
+        className="relative mx-auto max-w-4xl text-center"
+        variants={reduce ? undefined : staggerContainer}
+        initial={reduce ? false : "hidden"}
+        whileInView={reduce ? undefined : "show"}
+        viewport={viewportOnce}
+      >
+        <Eyebrow light>{t("mission.eyebrow")}</Eyebrow>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
+          variants={fadeUp}
           className="mt-5 text-2xl font-semibold leading-snug md:text-4xl md:leading-tight"
         >
-          Agency content shouldn&apos;t live in five native apps and a spreadsheet.
-          <span className="mt-3 block text-warm">
-            We centralize planning, sync, and team KPI — per brand.
-          </span>
+          {t("mission.line1")}
+          <span className="mt-3 block text-warm">{t("mission.line2")}</span>
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: 0.1 }}
+          variants={fadeUp}
           className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-white/70 md:text-lg"
         >
-          Hezntainment is built for social agencies and Web3 projects that run
-          multiple brands. Switch workspace, filter Monitor Data & Laporan KPI
-          instantly, and keep Admin tooling away from day-to-day staff views.
+          {t("mission.body")}
         </motion.p>
-      </div>
+      </motion.div>
     </Section>
   );
 }
