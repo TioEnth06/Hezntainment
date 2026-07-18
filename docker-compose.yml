@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mna-content-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: mna
+      POSTGRES_PASSWORD: mna_dev_password
+      POSTGRES_DB: mna_content
+    volumes:
+      - mna_pg_data:/var/lib/postgresql/data
+
+volumes:
+  mna_pg_data:
