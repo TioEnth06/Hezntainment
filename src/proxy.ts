@@ -29,7 +29,7 @@ export async function proxy(request: NextRequest) {
 
   if (isAuthPage && session?.user) {
     return NextResponse.redirect(
-      new URL(homePathForRole(session.user.role), request.url),
+      new URL(homePathForRole(), request.url),
     );
   }
 

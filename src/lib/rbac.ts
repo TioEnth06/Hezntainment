@@ -11,7 +11,8 @@ export function isAdmin(role: AppRole) {
   return role === "ADMIN";
 }
 
-export function homePathForRole(_role: AppRole) {
+/** All roles currently land on the same MNA dashboard. */
+export function homePathForRole() {
   return "/mna/dashboard";
 }
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getSession, signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { homePathForRole, type AppRole } from "@/lib/rbac";
+import { homePathForRole } from "@/lib/rbac";
 
 export function LoginForm() {
   const router = useRouter();
@@ -30,14 +30,11 @@ export function LoginForm() {
       return;
     }
 
-    const session = await getSession();
-    const role = (session?.user as { role?: AppRole } | undefined)?.role;
+    await getSession();
     const destination =
       callbackUrl && callbackUrl.startsWith("/mna")
         ? callbackUrl
-        : role
-          ? homePathForRole(role)
-          : "/mna/dashboard";
+        : homePathForRole();
 
     setLoading(false);
     router.push(destination);

@@ -2,11 +2,9 @@
 
 import {
   createContext,
-  useCallback,
   useContext,
-  useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
 } from "react";
 import { MNA_WORKSPACES } from "@/lib/mock/mna-data";
 import type { WorkspaceBrand } from "@/lib/workspace/types";
@@ -21,20 +19,40 @@ type WorkspaceContextValue = {
 
 const WorkspaceContext = createContext<WorkspaceContextValue | null>(null);
 
+const listeners = new Set<() => void>();
+
+function emit() {
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+function getActiveWorkspaceId() {
+  const saved = window.localStorage.getItem(STORAGE_KEY);
+  if (saved && MNA_WORKSPACES.some((w) => w.id === saved)) return saved;
+  return MNA_WORKSPACES[0].id;
+}
+
+function getServerWorkspaceId() {
+  return MNA_WORKSPACES[0].id;
+}
+
+function setActiveWorkspaceId(id: string) {
+  window.localStorage.setItem(STORAGE_KEY, id);
+  emit();
+}
+
 export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
-  const [activeId, setActiveId] = useState(MNA_WORKSPACES[0].id);
-
-  useEffect(() => {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
-    if (saved && MNA_WORKSPACES.some((w) => w.id === saved)) {
-      setActiveId(saved);
-    }
-  }, []);
-
-  const setActiveWorkspaceId = useCallback((id: string) => {
-    setActiveId(id);
-    window.localStorage.setItem(STORAGE_KEY, id);
-  }, []);
+  const activeId = useSyncExternalStore(
+    subscribe,
+    getActiveWorkspaceId,
+    getServerWorkspaceId,
+  );
 
   const activeWorkspace =
     MNA_WORKSPACES.find((w) => w.id === activeId) ?? MNA_WORKSPACES[0];
@@ -45,7 +63,7 @@ export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
       activeWorkspace,
       setActiveWorkspaceId,
     }),
-    [activeWorkspace, setActiveWorkspaceId],
+    [activeWorkspace],
   );
 
   return (
