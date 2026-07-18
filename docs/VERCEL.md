@@ -62,3 +62,23 @@ Click **Deploy**. Landing + demo login should work immediately with `AUTH_SECRET
 - [ ] Build succeeds (`prisma generate` via `postinstall` / `build`)
 - [ ] Demo login works
 - [ ] (Optional) Postgres migrated + seeded for real registration
+
+## Troubleshooting
+
+### `/login` shows **Internal Server Error**
+
+Almost always **missing `AUTH_SECRET`** in Vercel env vars.
+
+1. Vercel → Project → **Settings → Environment Variables**
+2. Add `AUTH_SECRET` = output of `openssl rand -base64 32`
+3. Add `AUTH_URL` = your live URL, e.g. `https://your-project.vercel.app`
+4. Apply to **Production** (and Preview if you use it)
+5. **Deployments → … → Redeploy** (env changes need a new deploy)
+
+Confirm in **Deployments → Runtime Logs** when opening `/login` — look for `MissingSecret` / `Please define a secret`.
+
+Demo accounts (no database required):
+
+- `admin@hezntainment.com` / `password123`
+- `sosmed@hezntainment.com` / `password123`
+- `editor@hezntainment.com` / `password123`

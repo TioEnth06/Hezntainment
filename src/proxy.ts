@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import type { Session } from "next-auth";
 import { auth } from "@/auth";
 import { canAccessPath, homePathForRole, isAdmin } from "@/lib/rbac";
 
@@ -16,7 +17,14 @@ export async function proxy(request: NextRequest) {
   const isAuthPage =
     pathname.startsWith("/login") || pathname.startsWith("/register");
 
-  const session = await auth();
+  // Missing AUTH_SECRET (common on first Vercel deploy) throws MissingSecret.
+  // Don't turn /login into a blank 500 — let the page render; API still needs the secret.
+  let session: Session | null = null;
+  try {
+    session = await auth();
+  } catch {
+    session = null;
+  }
 
   if (isProtected && !session?.user) {
     const url = new URL("/login", request.url);

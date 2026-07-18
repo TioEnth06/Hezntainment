@@ -3,11 +3,13 @@ import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
 import { compare } from "bcryptjs";
 import { DEMO_USERS, DEMO_WORKSPACE } from "@/lib/mock/auth-users";
-import { prisma } from "@/lib/prisma";
 import type { AppRole } from "@/lib/rbac";
 
 const googleConfigured =
   Boolean(process.env.AUTH_GOOGLE_ID) && Boolean(process.env.AUTH_GOOGLE_SECRET);
+
+/** Auth.js signs JWTs with this. Missing on Vercel → /login Internal Server Error. */
+const authSecret = process.env.AUTH_SECRET;
 
 const DEFAULT_ROLE: AppRole = "ADMIN";
 
@@ -44,6 +46,8 @@ async function authorizeDemo(email: string, password: string) {
 
 async function authorizeDatabase(email: string, password: string) {
   try {
+    // Lazy import so proxy/auth does not eagerly construct Prisma without DATABASE_URL
+    const { prisma } = await import("@/lib/prisma");
     const user = await prisma.user.findUnique({
       where: { email },
       include: {
@@ -80,6 +84,7 @@ async function authorizeDatabase(email: string, password: string) {
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
+  secret: authSecret,
   session: { strategy: "jwt", maxAge: 60 * 60 * 24 * 7 },
   pages: {
     signIn: "/login",
