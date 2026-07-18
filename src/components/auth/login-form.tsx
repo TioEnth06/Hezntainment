@@ -21,6 +21,20 @@ export function LoginForm() {
     e.preventDefault();
     setLoading(true);
     setError(null);
+
+    try {
+      const health = await fetch("/api/health/auth").then((r) => r.json());
+      if (!health?.ok) {
+        setError(t("auth.configError"));
+        setLoading(false);
+        return;
+      }
+    } catch {
+      setError(t("auth.configError"));
+      setLoading(false);
+      return;
+    }
+
     const res = await signIn("credentials", {
       email,
       password,
@@ -32,7 +46,13 @@ export function LoginForm() {
       return;
     }
 
-    await getSession();
+    const session = await getSession();
+    if (!session?.user) {
+      setLoading(false);
+      setError(t("auth.sessionFailed"));
+      return;
+    }
+
     const destination =
       callbackUrl && callbackUrl.startsWith("/mna")
         ? callbackUrl

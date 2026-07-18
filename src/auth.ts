@@ -8,9 +8,6 @@ import type { AppRole } from "@/lib/rbac";
 const googleConfigured =
   Boolean(process.env.AUTH_GOOGLE_ID) && Boolean(process.env.AUTH_GOOGLE_SECRET);
 
-/** Auth.js signs JWTs with this. Missing on Vercel → /login Internal Server Error. */
-const authSecret = process.env.AUTH_SECRET;
-
 const DEFAULT_ROLE: AppRole = "ADMIN";
 
 function sessionUserFields(input: {
@@ -84,7 +81,9 @@ async function authorizeDatabase(email: string, password: string) {
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   trustHost: true,
-  secret: authSecret,
+  // Secret comes from AUTH_SECRET / NEXTAUTH_SECRET at request time (Auth.js env helper).
+  // Do not bake process.env.AUTH_SECRET into a module const — empty build-time value
+  // would override runtime env on Vercel and break login after deploy.
   session: { strategy: "jwt", maxAge: 60 * 60 * 24 * 7 },
   pages: {
     signIn: "/login",

@@ -175,6 +175,10 @@ export const id: Record<keyof typeof en, string> = {
   "auth.signIn": "Masuk",
   "auth.signingIn": "Sedang masuk…",
   "auth.invalid": "Email atau password salah.",
+  "auth.configError":
+    "Auth server belum dikonfigurasi. Di Vercel set AUTH_SECRET + AUTH_URL, lalu Redeploy. Cek /api/health/auth",
+  "auth.sessionFailed":
+    "Login tidak membuat session. Pastikan AUTH_URL sama dengan URL situs ini, lalu Redeploy.",
   "auth.newHere": "Baru di sini?",
   "auth.createWorkspace": "Buat workspace",
   "auth.demoHint": "Semua role masuk MNA Content · ganti brand di sidebar",

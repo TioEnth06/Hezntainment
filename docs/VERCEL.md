@@ -65,17 +65,21 @@ Click **Deploy**. Landing + demo login should work immediately with `AUTH_SECRET
 
 ## Troubleshooting
 
-### `/login` shows **Internal Server Error**
+### `/login` shows **Internal Server Error** or blank page after login
 
-Almost always **missing `AUTH_SECRET`** in Vercel env vars.
+Almost always **missing / wrong `AUTH_SECRET`** (or `AUTH_URL`) in Vercel.
+
+Live check: open `https://YOUR-APP.vercel.app/api/health/auth`  
+→ must return `"ok": true`. If `503` / `authSecretConfigured: false`, env is not applied.
 
 1. Vercel → Project → **Settings → Environment Variables**
-2. Add `AUTH_SECRET` = output of `openssl rand -base64 32`
-3. Add `AUTH_URL` = your live URL, e.g. `https://your-project.vercel.app`
-4. Apply to **Production** (and Preview if you use it)
-5. **Deployments → … → Redeploy** (env changes need a new deploy)
+2. Add (Production + Preview):
+   - `AUTH_SECRET` = output of `openssl rand -base64 32`
+   - `AUTH_URL` = exact live origin, e.g. `https://hezntainment.vercel.app` (no trailing slash)
+3. **Deployments → … → Redeploy** (required — new env alone is not enough)
+4. Hard-refresh `/login`, then try demo login again
 
-Confirm in **Deployments → Runtime Logs** when opening `/login` — look for `MissingSecret` / `Please define a secret`.
+Confirm in **Deployments → Runtime Logs** — look for `MissingSecret` / `Please define a secret`.
 
 Demo accounts (no database required):
 

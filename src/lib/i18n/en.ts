@@ -171,6 +171,10 @@ export const en = {
   "auth.signIn": "Sign in",
   "auth.signingIn": "Signing in…",
   "auth.invalid": "Invalid email or password.",
+  "auth.configError":
+    "Server auth is not configured. On Vercel set AUTH_SECRET + AUTH_URL, then Redeploy. Check /api/health/auth",
+  "auth.sessionFailed":
+    "Sign-in did not create a session. Confirm AUTH_URL matches this site URL, then Redeploy.",
   "auth.newHere": "New here?",
   "auth.createWorkspace": "Create workspace",
   "auth.demoHint": "All roles land in MNA Content · workspace switcher in sidebar",
