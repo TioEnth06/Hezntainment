@@ -9,6 +9,7 @@ import {
   scaleKpiForMonth,
 } from "@/lib/mock/mna-data";
 import { useI18n, type TranslationKey } from "@/lib/i18n";
+import { KPI_STATUS_KEYS } from "@/lib/mna/kpi-status-keys";
 import { useWorkspace } from "@/lib/workspace/context";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,17 +23,10 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 
-const MONTH_VALUES = ["2026-01", "2026-07"] as const;
-
-const STATUS_KEYS = {
-  behind: "kpi.status.behind",
-  onTrack: "kpi.status.onTrack",
-  slowStart: "kpi.status.slowStart",
-  catchingUp: "kpi.status.catchingUp",
-} as const satisfies Record<
-  ReturnType<typeof kpiStatus>["code"],
-  TranslationKey
->;
+const MONTH_OPTIONS: { value: string; labelKey: TranslationKey }[] = [
+  { value: "2026-01", labelKey: "kpi.month.2026-01" },
+  { value: "2026-07", labelKey: "kpi.month.2026-07" },
+];
 
 export function KPIReport() {
   const { t } = useI18n();
@@ -49,7 +43,9 @@ export function KPIReport() {
     [activeWorkspace.id, month],
   );
 
-  const monthLabel = t(`kpi.month.${month}` as TranslationKey);
+  const monthLabel =
+    MONTH_OPTIONS.find((opt) => opt.value === month)?.labelKey ??
+    "kpi.month.2026-07";
 
   function printReport() {
     window.open(
@@ -74,9 +70,9 @@ export function KPIReport() {
             value={month}
             onChange={(e) => setMonth(e.target.value)}
           >
-            {MONTH_VALUES.map((value) => (
-              <option key={value} value={value}>
-                {t(`kpi.month.${value}` as TranslationKey)}
+            {MONTH_OPTIONS.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {t(opt.labelKey)}
               </option>
             ))}
           </select>
@@ -88,7 +84,7 @@ export function KPIReport() {
       </div>
 
       <p className="text-xs font-bold uppercase tracking-wider text-muted">
-        {t("kpi.period", { month: monthLabel })}
+        {t("kpi.period", { month: t(monthLabel) })}
       </p>
 
       <section className="space-y-3">
@@ -120,7 +116,7 @@ export function KPIReport() {
                             : "success"
                       }
                     >
-                      {t(STATUS_KEYS[status.code])}
+                      {t(KPI_STATUS_KEYS[status.code])}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -204,7 +200,7 @@ export function KPIReport() {
                               : "success"
                         }
                       >
-                        {t(STATUS_KEYS[status.code])}
+                        {t(KPI_STATUS_KEYS[status.code])}
                       </Badge>
                       <Badge variant="muted">{workloadFlag}</Badge>
                     </div>

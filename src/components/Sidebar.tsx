@@ -306,13 +306,14 @@ export function Sidebar({
         collapsed ? "md:w-16" : "md:w-72",
       )}
     >
-      <header className="sticky top-0 z-40 flex w-full items-center gap-3 border-b border-line bg-ink px-4 py-3 text-white md:hidden">
+      <header className="sticky top-0 z-40 flex w-full items-center gap-3 border-b border-line bg-ink px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] text-white md:hidden">
         <div className="min-w-0 flex-1 text-left">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-warm">
             {t("sidebar.brand")}
           </p>
           <p className="truncate text-sm font-bold">{t("sidebar.subtitle")}</p>
         </div>
+        <LanguageToggle tone="dark" className="shrink-0 scale-90" />
         <Button
           type="button"
           variant="outline"
@@ -320,7 +321,7 @@ export function Sidebar({
           aria-label={mobileOpen ? t("sidebar.close") : t("sidebar.open")}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
-          className="ml-auto shrink-0 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
+          className="shrink-0 border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
         >
           {mobileOpen ? <X className="size-5" /> : <Menu className="size-5" />}
         </Button>
@@ -359,7 +360,7 @@ export function Sidebar({
         />
         <div
           className={cn(
-            "absolute inset-y-0 right-0 flex w-[min(20rem,88vw)] flex-col border-l border-white/10 shadow-2xl transition-transform duration-300 ease-out",
+            "absolute inset-y-0 right-0 flex w-[min(20rem,92vw)] flex-col border-l border-white/10 pb-[env(safe-area-inset-bottom)] shadow-2xl transition-transform duration-300 ease-out",
             mobileOpen ? "translate-x-0" : "translate-x-full",
           )}
         >

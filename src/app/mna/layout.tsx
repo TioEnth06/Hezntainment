@@ -20,7 +20,9 @@ export default async function MnaLayout({
           userName={session.user.name ?? session.user.email ?? "User"}
         />
         <div className="order-2 flex min-w-0 flex-1 flex-col md:order-1">
-          <main className="flex-1 px-4 py-6 md:px-8">{children}</main>
+          <main className="flex-1 px-3 py-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:px-4 sm:py-6 md:px-8">
+            {children}
+          </main>
         </div>
       </div>
     </WorkspaceProvider>

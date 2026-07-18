@@ -99,9 +99,11 @@ export function LinkTracker() {
 
   return (
     <div className="space-y-5" key={activeWorkspace.id}>
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{t("links.title")}</h1>
+      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
+            {t("links.title")}
+          </h1>
           <p className="mt-1 text-sm text-muted">
             {t("links.body")}{" "}
             <strong className="text-foreground">{activeWorkspace.name}</strong>
@@ -109,7 +111,12 @@ export function LinkTracker() {
             {t("links.totalClicks", { n: formatNumber(totalClicks) })}
           </p>
         </div>
-        <Button type="button" variant="warm" onClick={() => setCreating((v) => !v)}>
+        <Button
+          type="button"
+          variant="warm"
+          className="w-full sm:w-auto"
+          onClick={() => setCreating((v) => !v)}
+        >
           <Plus className="size-4" />
           {t("links.create")}
         </Button>
@@ -132,12 +139,13 @@ export function LinkTracker() {
               onChange={(e) => setUrl(e.target.value)}
             />
             <div className="flex gap-2">
-              <Button type="button" onClick={createLink}>
+              <Button type="button" className="flex-1 sm:flex-none" onClick={createLink}>
                 {t("links.save")}
               </Button>
               <Button
                 type="button"
                 variant="outline"
+                className="flex-1 sm:flex-none"
                 onClick={() => {
                   setCreating(false);
                   setError(null);
@@ -154,8 +162,8 @@ export function LinkTracker() {
       ) : null}
 
       <Card>
-        <CardContent className="p-0">
-          <Table>
+        <CardContent className="overflow-x-auto p-0">
+          <Table className="min-w-[640px]">
             <TableHeader>
               <TableRow>
                 <TableHead>{t("links.colLabel")}</TableHead>

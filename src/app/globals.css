@@ -84,6 +84,11 @@ body {
     var(--surface);
 }
 
+/* Hide scrollbar on mobile carousels while keeping scroll */
+.snap-x {
+  scrollbar-width: thin;
+}
+
 .marketing-glow {
   background:
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(102, 108, 255, 0.35), transparent 55%),

@@ -196,12 +196,12 @@ export function PerformanceMonitor() {
         ))}
       </div>
 
-      <div className="flex flex-wrap items-center gap-2 rounded-md bg-panel p-3 ring-1 ring-line">
+      <div className="flex flex-col gap-3 rounded-md bg-panel p-3 ring-1 ring-line sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
         <label className="text-xs font-bold uppercase tracking-wider text-muted">
           {t("monitor.filter")}
         </label>
         <select
-          className="h-9 rounded-md border border-line bg-panel-soft px-3 text-foreground text-sm"
+          className="h-10 w-full rounded-md border border-line bg-panel-soft px-3 text-foreground text-sm sm:h-9 sm:w-auto sm:min-w-[12rem]"
           value={brandFilter}
           onChange={(e) => {
             const value = e.target.value;
@@ -222,7 +222,7 @@ export function PerformanceMonitor() {
           ))}
         </select>
 
-        <div className="ml-auto flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 sm:ml-auto">
           <Button
             type="button"
             variant="outline"
@@ -237,6 +237,7 @@ export function PerformanceMonitor() {
             variant="warm"
             disabled={syncAllBusy}
             onClick={syncAll}
+            className="flex-1 sm:flex-none"
           >
             {syncAllBusy ? (
               <Loader2 className="size-4 animate-spin" />
@@ -253,8 +254,8 @@ export function PerformanceMonitor() {
       ) : null}
 
       <Card>
-        <CardContent className="p-0">
-          <Table>
+        <CardContent className="overflow-x-auto p-0">
+          <Table className="min-w-[640px]">
             <TableHeader>
               <TableRow>
                 <TableHead className="min-w-[220px]">{t("monitor.content")}</TableHead>
